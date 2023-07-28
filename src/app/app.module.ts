@@ -3,10 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LandingComponent } from './pages/landing/landing.component';
+import { IniciarSesionComponent } from './pages/iniciar-sesion/iniciar-sesion.component';
+import { RegistrarseComponent } from './pages/registrarse/registrarse.component';
+import { PlanesComponent } from './pages/planes/planes.component';
+import { PruebaComponent } from './pages/prueba/prueba.component';
+import { PrincipalComponent } from './pages/principal/principal.component';
+import { ImgLandingComponent } from './components/img-landing/img-landing.component';
+import { NavbarPricipalComponent } from './components/navbar-pricipal/navbar-pricipal.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LandingComponent,
+    IniciarSesionComponent,
+    RegistrarseComponent,
+    PlanesComponent,
+    PruebaComponent,
+    PrincipalComponent,
+    ImgLandingComponent,
+    NavbarPricipalComponent
   ],
   imports: [
     BrowserModule,

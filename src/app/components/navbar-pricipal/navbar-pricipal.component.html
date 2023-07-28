@@ -1,0 +1,170 @@
+<div class="Nav">
+  <div>
+    <div class="info">
+      <div style="display: flex; gap: 1rem">
+        <img src="../../../assets/img/logoCode.PNG" alt="" class="logo" />
+        <img src="../../../assets/img/logo.PNG" alt="" class="logo2" />
+        <button class="boton1">
+          <i class="fa-solid fa-play"></i>
+        </button>
+        <button class="boton1">Guardar</button>
+        <div class="proyecto">
+          <i class="fa-solid fa-folder"></i>
+          Proyecto 1
+          <button class="boton">
+            <i class="fa-solid fa-share-nodes"></i>
+          </button>
+          <button class="boton">
+            <i class="fa-solid fa-download"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="nombre">
+        <span class="usuario">Yhonny Yupanky</span>
+        <button
+          class="btn sesion"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#perfil"
+          aria-controls="perfil"
+        >
+          <i class="fa-solid fa-user icon"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Offcanvas para el perfil -->
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="perfil"
+  aria-labelledby="perfilLabel"
+>
+  <div class="offcanvas-header">
+    <button
+      type="button"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+      class="icon"
+    >
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <h5
+      class="offcanvas-title"
+      id="perfilLabel"
+      style="text-align: center; font-size: 35px; font-weight: 600"
+    >
+      Perfil
+    </h5>
+  </div>
+  <div class="offcanvas-body">
+    <div class="nombre">
+      Nombre Apellido
+      <button class="btn sesion" type="button">
+        <i class="fa-solid fa-user icon"></i>
+      </button>
+    </div>
+    <div class="plan">
+      Tipo de plan: Profesional
+      <button class="boton" routerLink="/planes">Actualizar plan</button>
+      Proyectos: Cantidad #3
+    </div>
+    <div class="proyectos">
+      <div
+        class="proyecto"
+        data-bs-toggle="collapse"
+        data-bs-target="#archivosProyecto"
+        aria-expanded="false"
+        aria-controls="archivosProyecto"
+      >
+        <i class="fa-solid fa-folder"></i>
+        Proyecto 1
+        <button class="boton">
+          <i class="fa-solid fa-share-nodes"></i>
+        </button>
+        <button class="boton">
+          <i class="fa-solid fa-download"></i>
+        </button>
+        <button class="boton">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </div>
+
+      <!-- Despliegue de proyectos en el perfil -->
+      <div class="collapse" id="archivosProyecto">
+        <div class="card">
+          <div class="archivos">
+            <i class="fa-solid fa-chevron-right"></i>
+            <div class="proyecto">
+              <i class="fa-brands fa-css3-alt"></i>
+              NombreCSS
+              <button class="boton">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="boton">
+                <i class="fa-solid fa-download"></i>
+              </button>
+              <button class="boton">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="archivos">
+            <i class="fa-solid fa-chevron-right"></i>
+            <div class="proyecto">
+                <i class="fa-brands fa-html5"></i>
+              NombreHTML
+              <button class="boton">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="boton">
+                <i class="fa-solid fa-download"></i>
+              </button>
+              <button class="boton">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proyecto">
+        <i class="fa-solid fa-folder"></i>
+        Proyecto 1
+        <button class="boton">
+          <i class="fa-solid fa-share-nodes"></i>
+        </button>
+        <button class="boton">
+          <i class="fa-solid fa-download"></i>
+        </button>
+        <button class="boton">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </div>
+
+      <div class="proyecto">
+        <i class="fa-solid fa-folder"></i>
+        Proyecto 1
+        <button class="boton">
+          <i class="fa-solid fa-share-nodes"></i>
+        </button>
+        <button class="boton">
+          <i class="fa-solid fa-download"></i>
+        </button>
+        <button class="boton">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </div>
+    </div>
+    <div class="cerrar" routerLink="">
+      <button class="iSesion">
+        <i class="fa-solid fa-power-off"></i>
+        Cerrar sesion
+      </button>
+    </div>
+  </div>
+</div>

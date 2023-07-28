@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    font-family: 'Quicksand';
+}
+
+:root {
+    --color-fondo1: #26292B;
+    --color-fondo2: #2E3239;
+    --color-claro1: #5f7ADB;
+    --color-claro2: #A2B2EE;
+    --color-hover1: #556ec6;
+    --color-hover2: #8c9acd;
+    --letras-blancas: #fff;
+    --letras-oscuras: #26292B;
+    --letras-grises: rgb(196, 196, 196);
+  }

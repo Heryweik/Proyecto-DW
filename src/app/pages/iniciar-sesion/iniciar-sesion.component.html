@@ -1,0 +1,57 @@
+<div class="containerFluid">
+  <div class="medium">
+    <app-img-landing></app-img-landing>
+  </div>
+  <div class="medium bienvenido">
+    <div class="c1"></div>
+    <div class="c2"></div>
+    <div class="c3"></div>
+    <div class="c4"></div>
+
+    <form class="form">
+        <button routerLink="" style="background-color: transparent; border: none;" class="icon">
+      <i class="fa-solid fa-chevron-left "></i>
+    </button>
+      <div class="img2">
+        <img src="../../../assets/img/logo.PNG" alt="" class="logo" />
+      </div>
+      <div class="saludo">
+      <h1>Iniciar sesion</h1>
+    </div>
+      <div class="formInput">
+        <input
+          type="text"
+          class="form-control inNombre"
+          id="nombre"
+        />
+        <label class="form-label mb-0 userLabel">Nombre:</label>
+      </div>
+      <div class="formInput">
+        <input
+          type="password"
+          class="form-control inNombre"
+          id="password"
+        />
+        <label class="form-label mb-0 userLabel">Contrasenia:</label>
+      </div>
+      <div class="boton">
+        <button class="iSesion" type="submit" routerLink="/principal">Iniciar sesion</button>
+      </div>
+
+      <div class="facebook">
+      <p>O inicia sesion con</p>
+
+      <button class="simbolo">
+        <i class="fa-brands fa-facebook logo"></i> Facebook
+      </button>
+    </div>
+
+      <div class="footer">
+        <p style="font-weight: lighter; margin-bottom: -3px">
+          Todavia no tienes una cuenta?
+        </p>
+        <p style="font-weight: bold; cursor: pointer;" routerLink="/signup">Crea un ahora</p>
+      </div>
+    </form>
+  </div>
+</div>
