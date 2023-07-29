@@ -1,7 +1,10 @@
-<app-navbar-pricipal></app-navbar-pricipal>
+<app-navbar-pricipal style="z-index: 10;"></app-navbar-pricipal>
 <div class="containerFluid">
     <aside>
-        <i class="fa-solid fa-bars icon"></i>
+        <i class="fa-solid fa-bars icon"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#aside"
+        aria-controls="aside"></i>
     </aside>
     <article>
         <div class="secciones">
@@ -15,4 +18,132 @@
         </div>
         <div class="secciones resultado"></div>
     </article>
+</div>
+
+
+<!-- Offcanvas del aside -->
+<div
+  class="offcanvas offcanvas-start"
+  data-bs-scroll="true" data-bs-backdrop="false"
+  tabindex="-1"
+  id="aside"
+  aria-labelledby="asideLabel"
+>
+  <div class="offcanvas-header">
+    <h5
+      class="offcanvas-title"
+      id="asideLabel"
+      style="text-align: center; font-size: 25px; font-weight: 600"
+    >
+      Proyectos
+    </h5>
+    
+    <button
+      type="button"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+      class="icon"
+    >
+    <i class="fa-solid fa-chevron-left"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="nombre">
+      <input type="text" placeholder="Nombre del proyecto" class="info">
+      <textarea name="" id="" cols="30" rows="4" placeholder="Descripcion del proyecto" class="info"></textarea>
+    </div>
+    <div class="plan">
+
+      <button class="boton">
+        <i class="fa-solid fa-folder-plus" style="font-size: 30px;"></i>
+        Nuevo proyecto
+    </button>
+
+    </div>
+    <div class="proyectos">
+      <div
+        class="proyecto"
+        data-bs-toggle="collapse"
+        data-bs-target="#archivosProyecto"
+        aria-expanded="false"
+        aria-controls="archivosProyecto"
+      >
+        <i class="fa-solid fa-folder" style="font-size: larger;"></i>
+        Proyecto 1
+        <button class="boton">
+          <i class="fa-solid fa-share-nodes"></i>
+        </button>
+        <button class="boton">
+          <i class="fa-solid fa-download"></i>
+        </button>
+        <button class="boton">
+            <i class="fa-solid fa-share-from-square"></i>
+          </button>
+      </div>
+
+      <!-- Despliegue de proyectos en el aside -->
+      <div class="collapse" id="archivosProyecto">
+        <div class="card">
+          <div class="archivos">
+            <i class="fa-solid fa-chevron-right"></i>
+            <div class="proyecto">
+              <i class="fa-brands fa-css3-alt" style="font-size: larger;"></i>
+              NombreCSS
+              <button class="boton">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="boton">
+                <i class="fa-solid fa-download"></i>
+              </button>
+              
+            </div>
+          </div>
+
+          <div class="archivos">
+            <i class="fa-solid fa-chevron-right" ></i>
+            <div class="proyecto">
+                <i class="fa-brands fa-html5" style="font-size: larger;"></i>
+              NombreHTML
+              <button class="boton">
+                <i class="fa-solid fa-share-nodes"></i>
+              </button>
+              <button class="boton">
+                <i class="fa-solid fa-download"></i>
+              </button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proyecto">
+        <i class="fa-solid fa-folder" style="font-size: larger;"></i>
+        Proyecto 1
+        <button class="boton">
+          <i class="fa-solid fa-share-nodes"></i>
+        </button>
+        <button class="boton">
+          <i class="fa-solid fa-download"></i>
+        </button>
+        
+        <button class="boton">
+            <i class="fa-solid fa-share-from-square"></i>
+          </button>
+      </div>
+
+      <div class="proyecto">
+        <i class="fa-solid fa-folder" style="font-size: larger;"></i>
+        Proyecto 1
+        <button class="boton">
+          <i class="fa-solid fa-share-nodes"></i>
+        </button>
+        <button class="boton">
+          <i class="fa-solid fa-download"></i>
+        </button>
+        <button class="boton">
+            <i class="fa-solid fa-share-from-square"></i>
+          </button>
+      </div>
+    </div>
+  </div>
 </div>
