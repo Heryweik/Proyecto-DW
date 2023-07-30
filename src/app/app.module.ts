@@ -12,6 +12,8 @@ import { PrincipalComponent } from './pages/principal/principal.component';
 import { ImgLandingComponent } from './components/img-landing/img-landing.component';
 import { NavbarPricipalComponent } from './components/navbar-pricipal/navbar-pricipal.component';
 import { NavbarPruebaComponent } from './components/navbar-prueba/navbar-prueba.component';
+import { NavbarAdministradorComponent } from './components/navbar-administrador/navbar-administrador.component';
+import { AdministradorComponent } from './pages/administrador/administrador.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { NavbarPruebaComponent } from './components/navbar-prueba/navbar-prueba.
     PrincipalComponent,
     ImgLandingComponent,
     NavbarPricipalComponent,
-    NavbarPruebaComponent
+    NavbarPruebaComponent,
+    NavbarAdministradorComponent,
+    AdministradorComponent
   ],
   imports: [
     BrowserModule,
