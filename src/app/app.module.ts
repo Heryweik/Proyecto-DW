@@ -11,6 +11,7 @@ import { PruebaComponent } from './pages/prueba/prueba.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { ImgLandingComponent } from './components/img-landing/img-landing.component';
 import { NavbarPricipalComponent } from './components/navbar-pricipal/navbar-pricipal.component';
+import { NavbarPruebaComponent } from './components/navbar-prueba/navbar-prueba.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NavbarPricipalComponent } from './components/navbar-pricipal/navbar-pri
     PruebaComponent,
     PrincipalComponent,
     ImgLandingComponent,
-    NavbarPricipalComponent
+    NavbarPricipalComponent,
+    NavbarPruebaComponent
   ],
   imports: [
     BrowserModule,

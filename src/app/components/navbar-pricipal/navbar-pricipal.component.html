@@ -1,13 +1,16 @@
 <div class="Nav">
   <div>
     <div class="info">
-      <div style="display: flex; gap: 1rem">
+      <div style="display: flex; gap: .8rem">
         <img src="../../../assets/img/logoCode.PNG" alt="" class="logo" />
         <img src="../../../assets/img/logo.PNG" alt="" class="logo2" />
         <button class="boton1">
           <i class="fa-solid fa-play"></i>
         </button>
-        <button class="boton1" data-bs-toggle="modal" data-bs-target="#guardar">Guardar</button>
+        <button class="boton1" data-bs-toggle="modal" data-bs-target="#guardar2" id="guardar">
+          <div id="uno">Guardar</div>
+          <div id="dos"><i class="fa-solid fa-floppy-disk"></i></div>
+        </button>
         <div class="proyecto">
           <i class="fa-solid fa-folder"></i>
           Proyecto 1
@@ -36,21 +39,23 @@
   </div>
 </div>
 
-<!-- Modal de guardar -->
-<div class="modal fade m-auto" id="guardar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="guardarLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        
-        <div class="modal-body">
-          Deseas guardar en la carpeta Proyecto 1?
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn boton1" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn sesion">Guardar</button>
-        </div>
+
+  <!-- Modal de guardar boton2-->
+<div class="modal fade m-auto" id="guardar2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="guardar2Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      
+      <div class="modal-body">
+        Deseas guardar en la carpeta Proyecto 1?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn boton1" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn sesion">Guardar</button>
       </div>
     </div>
   </div>
+</div>
+
 
 <!-- Offcanvas para el perfil -->
 <div

@@ -1,15 +1,17 @@
 .Nav {
     width: 100%;
-    height: auto;
+    height: 4.2rem;
     background-color: var(--color-fondo2);
     color: var(--letras-blancas);
     padding: .8rem;
     padding-left: 3rem;
     padding-right: 3rem;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     font-size: medium;
     gap: 1rem;
+    position: fixed;
 
     .info {
         width: 100%;
@@ -38,6 +40,10 @@
             padding-left: 1rem;
             padding-right: 1rem;
             border-radius: 15px;
+
+            #dos {
+                display: none;
+            }
         }
 
         .boton1:hover {
@@ -375,44 +381,22 @@
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) and (max-width: 1199.98px) { 
     .Nav {
-        padding: .8rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
     
         .info {
             width: auto;
             display: flex;
             gap: .2rem;
     
-    
-            .logo {
-                width: 9rem;
-                margin-top: 6px;
-            }
+
         }
     
-        .nombre {
-            font-size: 15px;
-    
-        }
-    
-        .sesion {
-            width: auto;
-            background-color: var(--color-claro1);
-            color: var(--letras-blancas);
-            border-radius: 20px;
-        }
-    
-        .sesion:hover {
-            background-color: var(--color-hover);
-        }
+
     }
  }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) { 
     .Nav {
-        padding: .8rem;
         padding-left: 1rem;
         padding-right: 1rem;
     
@@ -424,11 +408,9 @@
     
     
             .logo {
-                width: 10rem;
-            }
-
-            .boton {
-                display: none;
+                width: 8rem;
+                height: 2rem;
+                margin: auto;
             }
     
         }
@@ -437,61 +419,7 @@
             font-size: 15px;
     
         }
-    
-        .sesion {
-            width: auto;
-            background-color: var(--color-claro1);
-            color: var(--letras-blancas);
-            border-radius: 20px;
-        }
-    
-        .sesion:hover {
-            background-color: var(--color-hover);
-        }
 
-        .acordeon {
-            width: 100%;
-            border-radius: 20px;
-            display: block;
-    
-            .titulo {
-                background-color: var(--color-claro1);
-                border: none;
-                color: var(--letras-blancas);
-                cursor: pointer;
-                padding: 10px;
-                width: 100%;
-                text-align: left;
-                outline: none;
-                border-radius: 20px;
-                text-align: center;
-              }
-              
-              .contenido {
-                background-color: var(--letras-blancas);
-                padding: 10px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-left: 15px;
-                margin-right: 15px;
-              }
-    
-              .boton2 {
-                background-color: transparent;
-                border: none;
-                color: var(--letras-oscuras);
-                font-size: medium;
-                font-weight: 500;
-                height: 2.5rem;
-            }
-    
-            .boton2:hover {
-                font-weight: 700;
-                border-bottom: 2px solid var(--color-claro2);
-                box-shadow: 1px var(--color-claro2);
-            }
-          }
     }
  }
 
@@ -502,7 +430,6 @@
 @media (min-width: 576px) and (max-width: 767.98px) { 
         
     .Nav {
-        padding: .8rem;
         padding-left: 1rem;
         padding-right: 1rem;
     
@@ -514,7 +441,9 @@
     
     
             .logo {
-                width: 10rem;
+                width: 8rem;
+                height: 2rem;
+                margin: auto;
             }
 
             .boton {
@@ -525,85 +454,22 @@
     
         .nombre {
             font-size: 15px;
-    
-        }
-    
-        .sesion {
-            width: auto;
-            background-color: var(--color-claro1);
-            color: var(--letras-blancas);
-            border-radius: 20px;
-            display: none;
-        }
-    
-        .sesion:hover {
-            background-color: var(--color-hover);
-        }
 
-        .sesion2 {
-            width: auto;
-            background-color: var(--color-claro1);
-            color: var(--letras-blancas);
-            border-radius: 20px;
-            display: block;
-        }
-    
-        .sesion2:hover {
-            background-color: var(--color-hover);
-        }
-
-        .acordeon {
-            width: 100%;
-            border-radius: 20px;
-            display: block;
-    
-            .titulo {
-                background-color: var(--color-claro1);
-                border: none;
-                color: var(--letras-blancas);
-                cursor: pointer;
-                padding: 10px;
-                width: 100%;
-                text-align: left;
-                outline: none;
-                border-radius: 20px;
-                text-align: center;
-              }
-              
-              .contenido {
-                background-color: var(--letras-blancas);
-                padding: 10px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-left: 15px;
-                margin-right: 15px;
-              }
-    
-              .boton2 {
-                background-color: transparent;
-                border: none;
-                color: var(--letras-oscuras);
-                font-size: medium;
-                font-weight: 500;
-                height: 2.5rem;
+            .usuario{ 
+                display: none;
             }
     
-            .boton2:hover {
-                font-weight: 700;
-                border-bottom: 2px solid var(--color-claro2);
-                box-shadow: 1px var(--color-claro2);
-            }
-          }
+        }
+    
     }
 }
 
 
 @media (max-width: 575.98px) {
     .Nav {
-        padding: .8rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding-left: .1rem;
+        padding-right: .1rem; 
+        margin: auto;
     
         .info {
             width: auto;
@@ -611,16 +477,26 @@
             align-items: center;
             gap: 1px;
     
-    
+            .boton1 {
+                margin: auto;
+
+                #uno {
+                    display: none;
+                }
+
+                #dos {
+                    display: block;
+                }
+            }
+
             .logo {
                 width: 10rem;
                 display: none;
             }
 
             .logo2 {
-                width: 3.6rem;
+                width: 3.3rem;
                 display: block;
-                margin-right: -80px;
             }
 
             .boton {
@@ -633,74 +509,10 @@
             font-size: 15px;
             gap: .1rem;
     
-        }
-    
-        .sesion {
-            width: auto;
-            background-color: var(--color-claro1);
-            color: var(--letras-blancas);
-            border-radius: 20px;
-            display: none;
-        }
-    
-        .sesion:hover {
-            background-color: var(--color-hover);
-        }
-
-        .sesion2 {
-            width: auto;
-            background-color: var(--color-claro1);
-            color: var(--letras-blancas);
-            border-radius: 20px;
-            display: block;
-        }
-    
-        .sesion2:hover {
-            background-color: var(--color-hover);
-        }
-
-        .acordeon {
-            width: 100%;
-            border-radius: 20px;
-            display: block;
-    
-            .titulo {
-                background-color: var(--color-claro1);
-                border: none;
-                color: var(--letras-blancas);
-                cursor: pointer;
-                padding: 10px;
-                width: 100%;
-                text-align: left;
-                outline: none;
-                border-radius: 20px;
-                text-align: center;
-              }
-              
-              .contenido {
-                background-color: var(--letras-blancas);
-                padding: 10px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-left: 15px;
-                margin-right: 15px;
-              }
-    
-              .boton2 {
-                background-color: transparent;
-                border: none;
-                color: var(--letras-oscuras);
-                font-size: medium;
-                font-weight: 500;
-                height: 2.5rem;
+            .usuario {
+                display: none;
             }
+        }
     
-            .boton2:hover {
-                font-weight: 700;
-                border-bottom: 2px solid var(--color-claro2);
-                box-shadow: 1px var(--color-claro2);
-            }
-          }
     }
  }
