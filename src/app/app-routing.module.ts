@@ -6,6 +6,7 @@ import { RegistrarseComponent } from './pages/registrarse/registrarse.component'
 import { PlanesComponent } from './pages/planes/planes.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { PruebaComponent } from './pages/prueba/prueba.component';
+import { AdministradorComponent } from './pages/administrador/administrador.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,10 @@ const routes: Routes = [
     path: 'prueba', component: PruebaComponent
   },
   {
-    path: 'principal', component: PrincipalComponent
+    path: 'principal', component: PrincipalComponent 
+  },
+  {
+    path: 'administrador', component: AdministradorComponent
   },
   {
     path: '**', redirectTo: '', pathMatch: 'full'

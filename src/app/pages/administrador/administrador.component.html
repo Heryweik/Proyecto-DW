@@ -1,0 +1,108 @@
+<app-navbar-administrador></app-navbar-administrador>
+
+<div class="containerFluid">
+    <button class="boton">
+        Panel de administrador
+    </button>
+  <div class="header">
+    <span>Usuarios</span>
+    <div class="buscador">
+      <input type="text" class="form-control inNombre"
+      id="nombre" />
+      <button>
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="tabla">
+      <!-- Cabeceras -->
+      <div
+        class="celda"
+        style="
+          border-bottom: 1px solid white;
+          border-right: 1px solid white;
+          font-weight: 800;
+        "
+      >
+        Nombre
+      </div>
+      <div
+        class="celda"
+        style="
+          border-bottom: 1px solid white;
+          border-right: 1px solid white;
+          font-weight: 800;
+        "
+      >
+        Correo
+      </div>
+      <div
+        class="celda"
+        style="
+          border-bottom: 1px solid white;
+          border-right: 1px solid white;
+          font-weight: 800;
+        "
+      >
+        #Proyectos
+      </div>
+      <div
+        class="celda"
+        style="border-bottom: 1px solid white; font-weight: 800"
+      >
+      Eliminar
+    </div>
+      <!-- Filas de informacion -->
+      <div class="celda" style="border-right: 1px solid white">
+        Yhonny Aplicano
+      </div>
+      <div class="celda" style="border-right: 1px solid white">
+        yhonny@gmail.com
+      </div>
+      <div class="celda" style="border-right: 1px solid white">
+        6
+      </div>
+      <div class="celda">
+        <button class="delete" data-bs-toggle="modal" data-bs-target="#eliminar">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </div>
+
+       <!-- Filas de informacion -->
+       <div class="celda" style="border-right: 1px solid white">
+        Yhonny Aplicano
+      </div>
+      <div class="celda" style="border-right: 1px solid white">
+        yhonny@gmail.com
+      </div>
+      <div class="celda" style="border-right: 1px solid white">
+        2
+      </div>
+      <div class="celda">
+        <button class="delete" 
+        data-bs-toggle="modal" data-bs-target="#eliminar">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Modal para eliminar usuario-->
+    <div class="modal fade m-auto" id="eliminar" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="eliminarLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            
+            <div class="modal-body">
+              Deseas eliminar este usuario?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn boton1" data-bs-dismiss="modal">No</button>
+              <button type="button" class="btn sesion"  data-bs-dismiss="modal">Si</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    

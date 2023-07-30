@@ -1,0 +1,47 @@
+<div class="Nav">
+    <div>
+      <div class="info">
+        <div style="display: flex; gap: .8rem">
+          <img src="../../../assets/img/logoCode.PNG" alt="" class="logo" />
+          <img src="../../../assets/img/logo.PNG" alt="" class="logo2" />
+        </div>
+          
+        <button class="boton">
+            Panel de administrador
+        </button>
+  
+        <div class="nombre">
+          <span class="usuario">Yhonny Yupanky</span>
+          <button
+            class="btn sesion"
+            type="button"
+            data-bs-toggle="modal" data-bs-target="#guardar2"
+          >
+          <div id="uno">
+            Cerrar sesion
+          </div>
+          <div id="dos">
+            <i class="fa-solid fa-power-off icon"></i>
+          </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+    <!-- Modal para cerrar sesion-->
+  <div class="modal fade m-auto" id="guardar2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="guardar2Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        
+        <div class="modal-body">
+          Deseas cerrar sesion?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn boton1" data-bs-dismiss="modal">No</button>
+          <button type="button" class="btn sesion"  data-bs-dismiss="modal" routerLink="">Si</button>
+        </div>
+      </div>
+    </div>
+  </div>
