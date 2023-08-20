@@ -15,6 +15,7 @@ db.usuarios.insertMany([
       "administrador":false,
       "proyectos":[
          {
+            "_id":ObjectId(),
             "nombreProyecto":"Producto 1",
             "descripcion": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore, modi!",
             "archivos": [
