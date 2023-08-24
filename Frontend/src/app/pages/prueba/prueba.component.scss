@@ -1,3 +1,11 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
 .containerFluid {
     margin: 0;
     padding-top: 4.2rem;
@@ -44,16 +52,22 @@
         .secciones {
             width: 49.5%;
             height: 49%;
-            background-color: var(--color-fondo1);
-            padding: .5rem;
+            background-color: #1E1E1E;
+            position: relative;
+            z-index: 10;
 
             .logo {
                 width: 2rem;
+                position: absolute;
+                left: 3px;
+                top: 3px;
+                z-index: 11;
             }
         }
 
         .resultado {
             background-color: var(--letras-blancas);
+            padding: 0;
         }
     }
 }

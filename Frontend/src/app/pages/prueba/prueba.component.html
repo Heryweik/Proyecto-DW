@@ -1,4 +1,4 @@
-<app-navbar-prueba style="z-index: 10;"></app-navbar-prueba>
+<app-navbar-prueba class="nav"></app-navbar-prueba>
 <div class="containerFluid">
     <aside>
         <button class="atras" routerLink="">
@@ -8,13 +8,34 @@
     <article>
         <div class="secciones">
             <img src="../../../assets/img/html.png" alt="" class="logo">    
+            <ngx-monaco-editor 
+            style="height: 100%;"
+            [options]="editorOptionsHTML" 
+            [(ngModel)]="htmlCode">
+
+            </ngx-monaco-editor>
         </div>
         <div class="secciones">
-            <img src="../../../assets/img/css.png" alt="" class="logo">    
+            <img src="../../../assets/img/css.png" alt="" class="logo">   
+            <ngx-monaco-editor 
+            style="height: 100%;"
+            [options]="editorOptionsCSS" 
+            [(ngModel)]="cssCode">
+
+            </ngx-monaco-editor> 
         </div>
         <div class="secciones">
-            <img src="../../../assets/img/js.png" alt="" class="logo">    
+            <img src="../../../assets/img/js.png" alt="" class="logo">  
+            <ngx-monaco-editor 
+            style="height: 100%;"
+            [options]="editorOptionsJS" 
+            [(ngModel)]="jsCode">
+
+            </ngx-monaco-editor> 
+            
         </div>
-        <div class="secciones resultado"></div>
+        <div class="secciones resultado">
+            <iframe [srcdoc]="result" style="width: 100%; height: 99%; border: none; margin: 0; padding: 0;"></iframe>
+        </div>
     </article>
 </div>

@@ -1,0 +1,17 @@
+HTML:
+<h1 class="saludo">¡Hola CodeWeb!</h1>
+
+CSS: 
+.saludo {
+    color: #2E3239;
+    cursor: pointer;
+}
+
+JS:
+document.addEventListener('DOMContentLoaded', 
+function() {
+    const saludoElement = document.querySelector('.saludo');
+    saludoElement.addEventListener('click', function() {
+        saludoElement.style.color = '#5f7ADB';
+    });
+});
