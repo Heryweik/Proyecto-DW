@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 
 
@@ -8,6 +8,13 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
   styleUrls: ['./navbar-pricipal.component.scss']
 })
 export class NavbarPricipalComponent implements OnInit{
+
+  @Input() idProyecto: any;
+  @Input() nombreP: any;
+  @Input() descripcionProyecto: any;
+  @Input() htmlCode: any;
+  @Input() cssCode: any;
+  @Input() jsCode: any;
 
   infoUsuario: any;
   proyectos: any = [];
@@ -42,6 +49,21 @@ export class NavbarPricipalComponent implements OnInit{
     } else {
       this.currentCollapseIndex = index;
     }
+  }
+
+  guardarProyecto(){
+    const infoProyecto = {
+      nombreProyecto: this.nombreP,
+      descripcion: this.descripcionProyecto,
+      contenidoHTML: this.htmlCode,
+      contenidoCSS: this.cssCode,
+      contenidoJS: this.jsCode,
+  };
+
+    this.usuariosServices.modificarProyectoUsuario(infoProyecto, this.infoUsuario.id, this.idProyecto).subscribe(res =>{
+      console.log('Proyectos actualizado: ',res);
+    },
+    error => console.log(error))
   }
 
 }

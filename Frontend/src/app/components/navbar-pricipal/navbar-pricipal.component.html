@@ -4,16 +4,16 @@
       <div style="display: flex; gap: .8rem">
         <img src="../../../assets/img/logoCode.PNG" alt="" class="logo" />
         <img src="../../../assets/img/logo.PNG" alt="" class="logo2" />
-        <button class="boton1">
+        <!-- <button class="boton1">
           <i class="fa-solid fa-play"></i>
-        </button>
-        <button class="boton1" data-bs-toggle="modal" data-bs-target="#guardar2" id="guardar">
+        </button> -->
+        <button class="boton1" data-bs-toggle="modal" data-bs-target="#guardar2" id="guardar" *ngIf="nombreP">
           <div id="uno">Guardar</div>
           <div id="dos"><i class="fa-solid fa-floppy-disk"></i></div>
         </button>
-        <div class="proyecto">
+        <div class="proyecto" *ngIf="nombreP">
           <i class="fa-solid fa-folder"></i>
-          Proyecto 1
+          {{nombreP}}
           <button class="boton">
             <i class="fa-solid fa-share-nodes"></i>
           </button>
@@ -46,11 +46,11 @@
     <div class="modal-content">
       
       <div class="modal-body">
-        Deseas guardar en la carpeta Proyecto 1?
+        Deseas guardar el proyecto '{{nombreP}}'?
       </div>
       <div class="modal-footer">
         <button type="button" class="btn boton1" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn sesion">Guardar</button>
+        <button type="button" class="btn sesion" data-bs-dismiss="modal" (click)="guardarProyecto()">Guardar</button>
       </div>
     </div>
   </div>

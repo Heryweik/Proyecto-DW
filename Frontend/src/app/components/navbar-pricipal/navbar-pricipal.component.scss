@@ -12,6 +12,7 @@
     font-size: medium;
     gap: 1rem;
     position: fixed;
+    z-index: 10000;
 
     .info {
         width: 100%;
@@ -156,9 +157,12 @@
 .modal-content {
     background-color: var(--color-fondo2)!important;
     color: var(--letras-blancas);
+    
 
     .modal-body {
         text-align: center;
+        
+    z-index: 1200;
     }
 
     .modal-footer {
