@@ -24,7 +24,7 @@
       </div>
 
       <div class="nombre">
-        <span class="usuario">Yhonny Yupanky</span>
+        <span class="usuario">{{infoUsuario.nombre}} {{infoUsuario.apellido}}</span>
         <button
           class="btn sesion"
           type="button"
@@ -83,104 +83,57 @@
   </div>
   <div class="offcanvas-body">
     <div class="nombre">
-      Nombre Apellido
+      {{infoUsuario.nombre}} {{infoUsuario.apellido}}
       <button class="btn sesion" type="button">
         <i class="fa-solid fa-user icon"></i>
       </button>
     </div>
     <div class="plan">
-      Tipo de plan: Profesional
-      <button class="boton" routerLink="/planes">Actualizar plan</button>
-      Proyectos: Cantidad #3
+      Tipo de plan: {{infoUsuario.plan}}
+      <!-- <button class="boton" routerLink="/planes">Actualizar plan</button> -->
+      <br>
+      <br>
+      Cantidad de proyectos: {{ proyectos.length }}
     </div>
     <div class="proyectos">
-      <div
-        class="proyecto"
-        data-bs-toggle="collapse"
-        data-bs-target="#archivosProyecto"
-        aria-expanded="false"
-        aria-controls="archivosProyecto"
-      >
-        <i class="fa-solid fa-folder"></i>
-        Proyecto 1
-        <button class="boton">
-          <i class="fa-solid fa-share-nodes"></i>
-        </button>
-        <button class="boton">
-          <i class="fa-solid fa-download"></i>
-        </button>
-        <button class="boton">
-          <i class="fa-solid fa-trash"></i>
-        </button>
-      </div>
-
-      <!-- Despliegue de proyectos en el perfil -->
-      <div class="collapse" id="archivosProyecto">
-        <div class="card">
-          <div class="archivos">
-            <i class="fa-solid fa-chevron-right"></i>
-            <div class="proyecto">
-              <i class="fa-brands fa-css3-alt"></i>
-              NombreCSS
-              <button class="boton">
-                <i class="fa-solid fa-share-nodes"></i>
-              </button>
-              <button class="boton">
-                <i class="fa-solid fa-download"></i>
-              </button>
-              <button class="boton">
-                <i class="fa-solid fa-trash"></i>
-              </button>
-            </div>
-          </div>
-
-          <div class="archivos">
-            <i class="fa-solid fa-chevron-right"></i>
-            <div class="proyecto">
-                <i class="fa-brands fa-html5"></i>
-              NombreHTML
-              <button class="boton">
-                <i class="fa-solid fa-share-nodes"></i>
-              </button>
-              <button class="boton">
-                <i class="fa-solid fa-download"></i>
-              </button>
-              <button class="boton">
-                <i class="fa-solid fa-trash"></i>
-              </button>
-            </div>
-          </div>
+      <ng-container *ngFor="let proyecto of proyectos; let i = index">
+        <div class="proyecto" (click)="toggleCollapse(i)">
+          <i class="fa-solid fa-folder"></i>
+          {{ proyecto.nombreProyecto }}
+          <button class="boton" >
+            <i class="fa-solid fa-share-nodes"></i>
+          </button>
+          <button class="boton">
+            <i class="fa-solid fa-download"></i>
+          </button>
+          <button class="boton">
+            <i class="fa-solid fa-trash"></i>
+          </button>
         </div>
-      </div>
-
-      <div class="proyecto">
-        <i class="fa-solid fa-folder"></i>
-        Proyecto 1
-        <button class="boton">
-          <i class="fa-solid fa-share-nodes"></i>
-        </button>
-        <button class="boton">
-          <i class="fa-solid fa-download"></i>
-        </button>
-        <button class="boton">
-          <i class="fa-solid fa-trash"></i>
-        </button>
-      </div>
-
-      <div class="proyecto">
-        <i class="fa-solid fa-folder"></i>
-        Proyecto 1
-        <button class="boton">
-          <i class="fa-solid fa-share-nodes"></i>
-        </button>
-        <button class="boton">
-          <i class="fa-solid fa-download"></i>
-        </button>
-        <button class="boton">
-          <i class="fa-solid fa-trash"></i>
-        </button>
-      </div>
+    
+        <!-- Despliegue de proyectos en el perfil -->
+        <div id="collapse{{i}}" [ngbCollapse]="currentCollapseIndex !== i">
+          <ng-container *ngFor="let archivo of proyecto.archivos">
+            <div class="card">
+              <div class="archivos">
+                <i class="fa-solid fa-chevron-right"></i>
+                <div class="proyecto">
+                  <i class="fa-solid fa-file"></i>
+                  {{ archivo.nombreArchivo }}
+                  <button class="boton">
+                    <i class="fa-solid fa-share-nodes"></i>
+                  </button>
+                  <button class="boton">
+                    <i class="fa-solid fa-download"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </ng-container>
     </div>
+
     <div class="cerrar" routerLink="">
       <button class="iSesion">
         <i class="fa-solid fa-power-off"></i>

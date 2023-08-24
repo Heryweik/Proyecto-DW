@@ -1,63 +1,101 @@
 <div class="containerFluid">
-    <div class="medium">
-      <app-img-landing></app-img-landing>
-    </div>
-    <div class="medium bienvenido">
-      <div class="c1"></div>
-      <div class="c2"></div>
-      <div class="c3"></div>
-      <div class="c4"></div>
-  
-      <form class="form">
-          <button routerLink="" style="background-color: transparent; border: none;" class="icon">
-        <i class="fa-solid fa-chevron-left "></i>
+  <div class="medium">
+    <app-img-landing></app-img-landing>
+  </div>
+  <div class="medium bienvenido">
+    <div class="c1"></div>
+    <div class="c2"></div>
+    <div class="c3"></div>
+    <div class="c4"></div>
+
+    <button
+        routerLink=""
+        style="background-color: transparent; border: none"
+        class="icon"
+      >
+        <i class="fa-solid fa-chevron-left"></i>
       </button>
-        <div class="img2">
-          <img src="../../../assets/img/logo.PNG" alt="" class="logo" />
-        </div>
-        <div class="saludo">
+
+    <form class="form" [formGroup]="formularioRegistro">
+      
+      <div class="img2">
+        <img src="../../../assets/img/logo.PNG" alt="" class="logo" />
+      </div>
+      <div class="saludo">
         <h1>Registrate</h1>
       </div>
-        <div class="formInput">
-          <input
-            type="text"
-            class="form-control inNombre"
-            id="nombre"
-          />
-          <label class="form-label mb-0 userLabel">Nombre:</label>
-        </div>
-        <div class="formInput">
-            <input
-              type="text"
-              class="form-control inNombre"
-              id="apellido"
-            />
-            <label class="form-label mb-0 userLabel">Apellido:</label>
+      <div class="formInput">
+        <input type="text" class="form-control inNombre" id="nombre" formControlName="nombre"/>
+        <label class="form-label mb-0 userLabel">Nombre:</label>
+      </div>
+      <div class="formInput">
+        <input type="text" class="form-control inNombre" id="apellido" formControlName="apellido"/>
+        <label class="form-label mb-0 userLabel">Apellido:</label>
+      </div>
+      <div class="formInput">
+        <input type="email" class="form-control inNombre" id="email" formControlName="correo"/>
+        <label class="form-label mb-0 userLabel">Correo:</label>
+      </div>
+      <div class="formInput">
+        <input type="password" class="form-control inNombre" id="password" formControlName="contrasenia"/>
+        <label class="form-label mb-0 userLabel">Contraseña:</label>
+      </div>
+      <div type="button" class="pro" data-bs-toggle="modal" data-bs-target="#suscripcion">
+        <button class="iSesion probar">Planes</button> 
+      </div>
+      
+      <span style="text-align: center; margin-bottom: .5rem;">Suscripcion elegida: {{suscripcion}}</span>
+      <div class="boton" routerLink="/login">
+        <button class="iSesion" type="button"
+        (click)="registrarse()"
+        [disabled]="!formularioRegistro.valid">Registrarse</button>
+      </div>
+
+      <div class="footer">
+        <p>@YhonnyAplicano</p>
+      </div>
+    </form>
+  </div>
+</div>
+
+ <!-- Modal de guardar boton2-->
+ <div class="modal fade m-auto" id="suscripcion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="guardar2Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h3>Planes</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="plan">
+          <div class="card">
+              <div class="precio">Gratis</div>
+              <h3>Principiante</h3>
+              <p>1 Proyecto</p>
+              <div class="elegir" data-bs-dismiss="modal"
+              (click)="suscripcionElegida('Principiante')">Elegir</div>
           </div>
-          <div class="formInput">
-            <input
-              type="email"
-              class="form-control inNombre"
-              id="email"
-            />
-            <label class="form-label mb-0 userLabel">Correo:</label>
+          <div class="card">
+              <div class="precio">5$</div>
+              <h3>Profesional</h3>
+              <p>10 Proyecto</p>
+              <div class="elegir" data-bs-dismiss="modal" 
+              (click)="suscripcionElegida('Profesional')">Elegir</div>
           </div>
-        <div class="formInput">
-          <input
-            type="password"
-            class="form-control inNombre"
-            id="password"
-          />
-          <label class="form-label mb-0 userLabel">Contrasenia:</label>
-        </div>
-        <div class="boton" routerLink="/planes">
-          <button class="iSesion" type="submit">Registrarse</button>
-        </div>
-  
-        <div class="footer">
-            <p>@Copyright</p>
+          <div class="card" style="margin-bottom: 1.5rem;">
+              <div class="precio">10$</div>
+              <h3>VIP</h3>
+              <p>25 Proyecto</p>
+              <div class="elegir" data-bs-dismiss="modal"
+              (click)="suscripcionElegida('VIP')">Elegir</div>
           </div>
-      </form>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn sesion" data-bs-dismiss="modal">Cerrar</button>
+      </div>
     </div>
   </div>
-  
+</div>

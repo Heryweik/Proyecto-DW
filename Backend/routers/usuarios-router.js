@@ -12,7 +12,7 @@ router.post('/login', async (req, res) => {
 
     if (usuarioEncontrado && usuarioEncontrado.contrasenia === contrasenia) {
       const { contrasenia, ...usuarioLogueado } = usuarioEncontrado.toObject();
-      res.json({ exito: true, mensaje: 'Inicio de sesión exitoso', id: usuarioLogueado._id, nombre: usuarioLogueado.nombre, apellido: usuarioLogueado.apellido, plan: usuarioLogueado.plan });
+      res.json({ exito: true, mensaje: 'Inicio de sesión exitoso', id: usuarioLogueado._id, nombre: usuarioLogueado.nombre, apellido: usuarioLogueado.apellido, plan: usuarioLogueado.plan, administrador: usuarioLogueado.administrador });
     } else {
       res.status(401).json({ exito: false, mensaje: 'Credenciales inválidas' });
     }
@@ -25,7 +25,7 @@ router.post('/login', async (req, res) => {
 /* Obtener todas los usuarios (administrador) */
 router.get("/", function (req, res) {
   usuario
-    .find({})
+    .find({ administrador: false }, {contrasenia: false})
     .then((result) => {
       /* Vemos todos los usuarios como lo hacemos en mongosh */
       res.send(result);
@@ -57,6 +57,35 @@ router.post("/", function (req, res) {
       res.end();
   })
 
+});
+
+/* Obtener un usuario */
+router.get("/:nombre", function (req, res) {
+  usuario
+    .find({nombre:req.params.nombre})
+    .then((result) => {
+      res.send(result[0]); /* Con [] enviamos solo un objeto no un arreglo */
+      res.end();
+    })
+    .catch((error) => {
+      res.send(error);
+      res.end();
+    });
+});
+
+/* Eliminar un usuario */
+router.delete("/:id", function (req, res) {
+  usuario.deleteOne(
+    {
+    _id:req.params.id
+  }
+  ).then(result =>{
+    res.send(result);
+    res.end();
+  }).catch(error =>{
+    res.send(error);
+    res.end();
+  });
 });
 
 /* Obtener proyectos de un usuario */

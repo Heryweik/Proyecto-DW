@@ -15,6 +15,10 @@ import { NavbarPruebaComponent } from './components/navbar-prueba/navbar-prueba.
 import { NavbarAdministradorComponent } from './components/navbar-administrador/navbar-administrador.component';
 import { AdministradorComponent } from './pages/administrador/administrador.component';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +36,11 @@ import { AdministradorComponent } from './pages/administrador/administrador.comp
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,11 +7,20 @@
   <div class="header">
     <span>Usuarios</span>
     <div class="buscador">
+      <form [formGroup]="formularioBuscarUsuario" style="width: 100%; display: flex; gap: .5rem;">
       <input type="text" class="form-control inNombre"
-      id="nombre" />
-      <button>
+      id="nombre" placeholder="Busqueda por nombre"
+      formControlName="nombre"/>
+      <button type="button" 
+      (click)="buscarUsuario()"
+      [disabled]="!formularioBuscarUsuario.valid"
+      [ngClass]="{'visible': regionVisible == 'recarga', 'noVisible': regionVisible != 'buscador'}">
         <i class="fa-solid fa-magnifying-glass"></i>
       </button>
+
+      <button (click)="recargar()"
+      [ngClass]="{'visible': regionVisible == 'buscador', 'noVisible': regionVisible != 'recarga'}"><i class="fa-solid fa-rotate-right"></i></button>
+    </form>
     </div>
   </div>
 
@@ -55,37 +64,23 @@
       Eliminar
     </div>
       <!-- Filas de informacion -->
+      <ng-container *ngFor="let usuario of usuarios">
       <div class="celda" style="border-right: 1px solid white">
-        Yhonny Aplicano
+        {{usuario.nombre}} {{usuario.apellido}}
       </div>
       <div class="celda" style="border-right: 1px solid white">
-        yhonny@gmail.com
+        {{usuario.correo}}
       </div>
       <div class="celda" style="border-right: 1px solid white">
-        6
+        {{usuario.proyectos.length}}
       </div>
       <div class="celda">
-        <button class="delete" data-bs-toggle="modal" data-bs-target="#eliminar">
+        <button class="delete" data-bs-toggle="modal" data-bs-target="#eliminar" (click)="usuarioEliminar(usuario._id)">
           <i class="fa-solid fa-trash"></i>
         </button>
       </div>
+    </ng-container>
 
-       <!-- Filas de informacion -->
-       <div class="celda" style="border-right: 1px solid white">
-        Yhonny Aplicano
-      </div>
-      <div class="celda" style="border-right: 1px solid white">
-        yhonny@gmail.com
-      </div>
-      <div class="celda" style="border-right: 1px solid white">
-        2
-      </div>
-      <div class="celda">
-        <button class="delete" 
-        data-bs-toggle="modal" data-bs-target="#eliminar">
-          <i class="fa-solid fa-trash"></i>
-        </button>
-      </div>
     </div>
   </div>
 </div>
@@ -100,7 +95,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn boton1" data-bs-dismiss="modal">No</button>
-              <button type="button" class="btn sesion"  data-bs-dismiss="modal">Si</button>
+              <button type="button" class="btn sesion"  data-bs-dismiss="modal" (click)="eliminar()">Si</button>
             </div>
           </div>
         </div>

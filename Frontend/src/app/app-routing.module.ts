@@ -25,10 +25,10 @@ const routes: Routes = [
     path: 'prueba', component: PruebaComponent
   },
   {
-    path: 'principal', component: PrincipalComponent 
+    path: 'principal/:id', component: PrincipalComponent 
   },
   {
-    path: 'administrador', component: AdministradorComponent
+    path: 'administrador/:id', component: AdministradorComponent
   },
   {
     path: '**', redirectTo: '', pathMatch: 'full'

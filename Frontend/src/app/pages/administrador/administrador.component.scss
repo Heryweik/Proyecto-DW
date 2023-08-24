@@ -1,3 +1,11 @@
+.visible{
+    display: block;
+}
+
+.noVisible{
+    display: none;
+}
+
 .containerFluid {
     min-height: 100vh;
     background-color: var(--color-fondo1);
@@ -38,6 +46,7 @@
             width: 50%;
             display: flex;
             gap: .5rem;
+            
 
             .inNombre {
                 border-radius: 20px;
@@ -50,6 +59,10 @@
                 width: 100%;
                 height: 3rem;
                }
+
+               .inNombre::placeholder {
+                color: var(--letras-grises); /* Cambia el color a tu preferencia */
+              }
 
                button {
                 background-color: var(--color-claro2);
