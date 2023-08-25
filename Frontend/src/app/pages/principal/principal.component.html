@@ -81,6 +81,11 @@
           class="info"
           formControlName="nombreProyecto"
         />
+        <!-- <br>
+        <div *ngIf="nombreProyecto.invalid && (nombreProyecto.dirty || nombreProyecto.touched)" >
+          <span *ngIf="nombreProyecto.errors.required">Error el campo es obligatorio</span>
+          <span *ngIf="nombreProyecto.errors.maxlength">Error el tamaño máximo es de 10 caracteres</span>
+        </div> -->
         <textarea
           name=""
           id=""

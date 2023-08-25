@@ -30,17 +30,20 @@ export class NavbarPricipalComponent implements OnInit{
       console.log('usuario logueado: ', this.infoUsuario.nombre);
     }
 
-    /* Consumo del endpoint para obtener los proyectos del usuario */
-    this.obtenerProyectos()
+    /* Obtenemos el arreglo con los proyectos del service */
+    this.usuariosServices.proyectos$.subscribe(proyectos => {
+      this.proyectos = proyectos;
+    });
+    /* this.obtenerProyectos() */
   }
 
-  obtenerProyectos() {
+  /* obtenerProyectos() {
     this.usuariosServices.obtenerProyectosUsuario(this.infoUsuario.id).subscribe(res =>{
       console.log('Proyectos del usuario: ',res);
       this.proyectos = res.proyectos;
     },
     error => console.log(error))
-  }
+  } */
 
   /* Ayuda al colapso de los proyectos para ver sus archivos */
   toggleCollapse(index: number) {
@@ -58,12 +61,31 @@ export class NavbarPricipalComponent implements OnInit{
       contenidoHTML: this.htmlCode,
       contenidoCSS: this.cssCode,
       contenidoJS: this.jsCode,
-  };
+    };
 
     this.usuariosServices.modificarProyectoUsuario(infoProyecto, this.infoUsuario.id, this.idProyecto).subscribe(res =>{
       console.log('Proyectos actualizado: ',res);
     },
     error => console.log(error))
+  }
+
+  eleminarProyecto(idProyecto: any) {
+    console.log('id del usuario a eliminar proyecto: ', this.infoUsuario.id)
+
+    this.usuariosServices.eliminarProyectosUsuario(this.infoUsuario.id, idProyecto).subscribe(res =>{
+      console.log('Proyecto eliminado: ',res);
+
+      /* Se actualiza la lista de proyectos */
+      this.obtenerProyectos();
+    },
+    error => console.log(error))
+  }
+
+  obtenerProyectos() {
+    this.usuariosServices.obtenerProyectosUsuario(this.infoUsuario.id).subscribe(res => {
+      this.usuariosServices.actualizarProyectos(res.proyectos); // Actualiza el servicio compartido
+    },
+    error => console.log(error));
   }
 
 }

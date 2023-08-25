@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -45,6 +45,14 @@ export class UsuariosService {
 
   obtenerProyectosUsuario(idUsuario: any):Observable<any>{
     return this.httpClient.get(`http://localhost:8888/usuarios/${idUsuario}/proyectos`,{});
+  }
+
+/* Actualizamos la lista de proyectos en el componente principal y navbar-principal */
+  private proyectosSubject = new BehaviorSubject<any[]>([]);
+  proyectos$ = this.proyectosSubject.asObservable();
+
+  actualizarProyectos(proyectos: any[]) {
+    this.proyectosSubject.next(proyectos);
   }
 
   crearProyectoUsuario(data: any, idUsuario:any):Observable<any>{

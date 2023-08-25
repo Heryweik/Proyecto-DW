@@ -21,7 +21,7 @@ export class PrincipalComponent implements OnInit{
 
 
   formularioCrearProyecto = new FormGroup({
-    nombreProyecto: new FormControl('', [Validators.required]),
+    nombreProyecto: new FormControl('', [Validators.required, Validators.maxLength(10)]),
     descripcion: new FormControl('', [Validators.required]),
     contenidoHTML: new FormControl('<h1 class="saludo">¡Hola CodeWeb!</h1>', [Validators.required]),
     contenidoCSS: new FormControl(
@@ -64,27 +64,66 @@ export class PrincipalComponent implements OnInit{
     const usuarioStorage = localStorage.getItem('usuario');
     if (usuarioStorage) {
       this.infoUsuario = JSON.parse(usuarioStorage);
-      console.log('usuario logueado: ', this.infoUsuario.nombre);
+      console.log('plan de usuario logueado: ', this.infoUsuario.plan);
     }
 
     /* Consumo del endpoint para obtener los proyectos del usuario */
     this.obtenerProyectos()
+
+    /* Obtenemos el arreglo con los proyectos del service */
+    this.usuariosServices.proyectos$.subscribe(proyectos => {
+      this.proyectos = proyectos;
+    });
   }
 
   obtenerProyectos() {
     this.usuariosServices.obtenerProyectosUsuario(this.infoUsuario.id).subscribe(res =>{
       console.log('Proyectos del usuario: ',res);
       this.proyectos = res.proyectos;
+
+      /* Actualizamos el arreglo de proyectos del service */
+      this.usuariosServices.actualizarProyectos(this.proyectos);
     },
     error => console.log(error))
   }
 
   crearProyecto() {
+    const planUsuario = this.infoUsuario.plan;
+
      this.usuariosServices.crearProyectoUsuario(this.formularioCrearProyecto.value, this.infoUsuario.id).subscribe(res =>{
       console.log(res);
       this.obtenerProyectos()
+
+      /* Se limia el formulario */
+      this.formularioCrearProyecto.controls.nombreProyecto.setValue('');
+      this.formularioCrearProyecto.controls.descripcion.setValue('');
+
+      const proyectosCreados = this.proyectos.length;
+
+      /* Limita la cantidad de proyectos segun su plan */
+      this.limitarCantidadProyectos(planUsuario, proyectosCreados);
+
     },
     error => console.log(error))
+  }
+
+  limitarCantidadProyectos(planUsuario: string, proyectos: number) {
+    // Cantidad de proyectos creados actualmente
+    const proyectosCreados = proyectos; 
+
+    if (planUsuario === 'Principiante' && proyectosCreados >= 1) {
+      // No permitir crear más proyectos
+      // Puedes mostrar un mensaje de error o realizar otra acción
+      console.log('No puedes crear más proyectos. Límite alcanzado para tu plan.');
+    } else if (planUsuario === 'Profesional' && proyectosCreados >= 10) {
+      // No permitir crear más proyectos
+      // Puedes mostrar un mensaje de error o realizar otra acción
+      console.log('No puedes crear más proyectos. Límite alcanzado para tu plan.');
+    } else if (planUsuario === 'VIP' && proyectosCreados >= 100) {
+      // No permitir crear más proyectos
+      // Puedes mostrar un mensaje de error o realizar otra acción
+      console.log('No puedes crear más proyectos. Límite alcanzado para tu plan.');
+    }
   }
 
   /* Ayuda al colapso de los proyectos para ver sus archivos */
