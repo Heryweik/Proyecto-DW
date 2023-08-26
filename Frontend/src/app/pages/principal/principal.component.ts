@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+declare var bootstrap: any; // Importar Bootstrap desde el ámbito global
+
 
 /* Para que angular confie en los html */
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser'
@@ -19,9 +21,8 @@ export class PrincipalComponent implements OnInit{
   nombreP: any;
   descripcionProyecto: any;
 
-
   formularioCrearProyecto = new FormGroup({
-    nombreProyecto: new FormControl('', [Validators.required, Validators.maxLength(10)]),
+    nombreProyecto: new FormControl('', [Validators.required]),
     descripcion: new FormControl('', [Validators.required]),
     contenidoHTML: new FormControl('<h1 class="saludo">¡Hola CodeWeb!</h1>', [Validators.required]),
     contenidoCSS: new FormControl(
@@ -76,7 +77,10 @@ export class PrincipalComponent implements OnInit{
     });
   }
 
+  
+
   obtenerProyectos() {
+    
     this.usuariosServices.obtenerProyectosUsuario(this.infoUsuario.id).subscribe(res =>{
       console.log('Proyectos del usuario: ',res);
       this.proyectos = res.proyectos;
@@ -89,41 +93,37 @@ export class PrincipalComponent implements OnInit{
 
   crearProyecto() {
     const planUsuario = this.infoUsuario.plan;
+    const proyectosCreados = this.proyectos.length;
+    
+    this.obtenerProyectos()
 
-     this.usuariosServices.crearProyectoUsuario(this.formularioCrearProyecto.value, this.infoUsuario.id).subscribe(res =>{
-      console.log(res);
-      this.obtenerProyectos()
-
-      /* Se limia el formulario */
-      this.formularioCrearProyecto.controls.nombreProyecto.setValue('');
-      this.formularioCrearProyecto.controls.descripcion.setValue('');
-
-      const proyectosCreados = this.proyectos.length;
-
-      /* Limita la cantidad de proyectos segun su plan */
-      this.limitarCantidadProyectos(planUsuario, proyectosCreados);
-
-    },
-    error => console.log(error))
-  }
-
-  limitarCantidadProyectos(planUsuario: string, proyectos: number) {
-    // Cantidad de proyectos creados actualmente
-    const proyectosCreados = proyectos; 
-
+    /* Limita la cantidad de proyectos segun su plan */
     if (planUsuario === 'Principiante' && proyectosCreados >= 1) {
-      // No permitir crear más proyectos
-      // Puedes mostrar un mensaje de error o realizar otra acción
+
       console.log('No puedes crear más proyectos. Límite alcanzado para tu plan.');
+
     } else if (planUsuario === 'Profesional' && proyectosCreados >= 10) {
-      // No permitir crear más proyectos
-      // Puedes mostrar un mensaje de error o realizar otra acción
+
       console.log('No puedes crear más proyectos. Límite alcanzado para tu plan.');
+
     } else if (planUsuario === 'VIP' && proyectosCreados >= 100) {
-      // No permitir crear más proyectos
-      // Puedes mostrar un mensaje de error o realizar otra acción
+      
       console.log('No puedes crear más proyectos. Límite alcanzado para tu plan.');
-    }
+
+    } else {
+
+      this.usuariosServices.crearProyectoUsuario(this.formularioCrearProyecto.value, this.infoUsuario.id).subscribe(res =>{
+        console.log(res);
+        this.obtenerProyectos()
+  
+        /* Se limia el formulario */
+        this.formularioCrearProyecto.controls.nombreProyecto.setValue('');
+        this.formularioCrearProyecto.controls.descripcion.setValue('');
+  
+      },
+      error => console.log(error))
+    
+    }   
   }
 
   /* Ayuda al colapso de los proyectos para ver sus archivos */
@@ -136,6 +136,9 @@ export class PrincipalComponent implements OnInit{
   }
 
   abrirProyecto(proyecto:any){
+    
+  this.obtenerProyectos()
+
     this.idProyecto = proyecto._id;
     this.nombreP = proyecto.nombreProyecto;
     this.descripcionProyecto = proyecto.descripcion;
@@ -153,5 +156,10 @@ export class PrincipalComponent implements OnInit{
   });
   }
 
-
+  generateDownloadLink(proyecto: any): string {
+    // Aquí construyes el enlace al archivo ZIP que contiene el proyecto
+    const downloadUrl = 'ruta-al-archivo-zip'; // Reemplaza con la ruta correcta
+  
+    return downloadUrl;
+  }
 }

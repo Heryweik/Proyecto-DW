@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { UsuariosService } from 'src/app/services/usuarios.service';
-
+declare var bootstrap: any; // Importar Bootstrap desde el ámbito global
 
  @Component({
   selector: 'app-navbar-pricipal',
@@ -37,6 +37,7 @@ export class NavbarPricipalComponent implements OnInit{
     /* this.obtenerProyectos() */
   }
 
+
   /* obtenerProyectos() {
     this.usuariosServices.obtenerProyectosUsuario(this.infoUsuario.id).subscribe(res =>{
       console.log('Proyectos del usuario: ',res);
@@ -55,6 +56,7 @@ export class NavbarPricipalComponent implements OnInit{
   }
 
   guardarProyecto(){
+
     const infoProyecto = {
       nombreProyecto: this.nombreP,
       descripcion: this.descripcionProyecto,
@@ -63,10 +65,16 @@ export class NavbarPricipalComponent implements OnInit{
       contenidoJS: this.jsCode,
     };
 
+    console.log(infoProyecto)
+
     this.usuariosServices.modificarProyectoUsuario(infoProyecto, this.infoUsuario.id, this.idProyecto).subscribe(res =>{
       console.log('Proyectos actualizado: ',res);
+
+      /* Actualizamos el arreglo de proyectos del service */
+    this.usuariosServices.actualizarProyectos(this.proyectos);
     },
     error => console.log(error))
+
   }
 
   eleminarProyecto(idProyecto: any) {
