@@ -114,7 +114,8 @@
           <div style="width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; text-align: center;">
             {{ proyecto.nombreProyecto }}
           </div>
-          <button class="boton" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartir Proyecto">
+          <button class="boton" data-bs-toggle="tooltip" data-bs-placement="top" title="Compartir Proyecto"
+          (click)="compartirProyecto(proyecto)">
             <i class="fa-solid fa-share-nodes"></i>
           </button>
           <a [href]="generateDownloadLink(proyecto)" download="{{ proyecto.nombreProyecto }}.zip" >
@@ -155,3 +156,29 @@
     </div>
   </div>
 </div>
+
+<!-- Modal de compartit-->
+<ng-template #modalCompartir let-modal >
+      
+  <div class="modal-header" style="display: flex; align-items: center; justify-content: center;">
+    
+    Deseas compartir el proyecto '{{proyecto.nombreProyecto}}'?
+    
+  </div>
+
+  <div class="modal-body">
+    <div>
+      Elije el usuario al que quieres compartir el proyecto:
+    </div>
+    <div>
+      <select [(ngModel)]="usuario" class="inNombre">
+        <option *ngFor="let usuario of usuarios" [value]="usuario._id" style="color: black;">{{usuario.nombre}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn boton1" (click)="modal.close('Cerrar')">Cerrar</button>
+    <button type="button" class="btn sesion" (click)="modal.close('Cerrar')" (click)="mandarProyecto()">Compartir</button>
+  </div>
+
+</ng-template>

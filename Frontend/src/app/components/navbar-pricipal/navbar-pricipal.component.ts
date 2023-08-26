@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 declare var bootstrap: any; // Importar Bootstrap desde el ámbito global
 
@@ -16,11 +17,21 @@ export class NavbarPricipalComponent implements OnInit{
   @Input() cssCode: any;
   @Input() jsCode: any;
 
+  /* Modal compartir */
+  @ViewChild ('modalCompartir') modalCompartir: any;
+
   infoUsuario: any;
   proyectos: any = [];
   currentCollapseIndex: number | null = null;
+  usuarios: any = [];
+  usuario: any = '';
+  proyecto:any = [];
+  compartirHTML: any;
+  compartirCSS: any;
+  compartirJS: any;
 
-  constructor(private usuariosServices:UsuariosService) {}
+  constructor(private usuariosServices:UsuariosService,
+              private modalService: NgbModal) {}
 
   ngOnInit(): void {
     /* Leemos la informacion de localStorage */
@@ -30,11 +41,22 @@ export class NavbarPricipalComponent implements OnInit{
       console.log('usuario logueado: ', this.infoUsuario.nombre);
     }
 
+    this.obtenerUsuarios()
+
     /* Obtenemos el arreglo con los proyectos del service */
     this.usuariosServices.proyectos$.subscribe(proyectos => {
       this.proyectos = proyectos;
     });
     /* this.obtenerProyectos() */
+  }
+
+  /* Usuarios que se ven al compartir un proyecto */
+  obtenerUsuarios() {
+    this.usuariosServices.obtenerUsuariosAdmin().subscribe(res =>{
+      console.log('usuarios: ',res);
+      this.usuarios = res;
+    },
+    error => console.log(error))
   }
 
 
@@ -94,6 +116,38 @@ export class NavbarPricipalComponent implements OnInit{
       this.usuariosServices.actualizarProyectos(res.proyectos); // Actualiza el servicio compartido
     },
     error => console.log(error));
+  }
+
+  compartirProyecto(proyecto: any) {
+    console.log('ver información del proyecto: ', proyecto);
+    this.proyecto = proyecto;
+
+    proyecto.archivos.forEach((item: { tipo: string; contenido: string; }) => {
+      if (item.tipo === 'html') {
+          this.compartirHTML = item.contenido;
+      } else if (item.tipo === 'css') {
+          this.compartirCSS = item.contenido;
+      } else if (item.tipo === 'javascript') {
+          this.compartirJS = item.contenido;
+      }
+  });
+    this.modalService.open(this.modalCompartir, {centered: true,size: 'md'});
+  }
+
+  mandarProyecto() {
+    const data = {
+      nombreProyecto: this.proyecto.nombreProyecto,
+      descripcion: this.proyecto.descripcion,
+      contenidoHTML: this.compartirHTML,
+      contenidoCSS: this.compartirCSS,
+      contenidoJS: this.compartirJS,
+    }
+
+    this.usuariosServices.crearProyectoUsuario(data, this.usuario).subscribe(res =>{
+      console.log(res);
+      this.obtenerProyectos()
+    },
+    error => console.log(error))
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 declare var bootstrap: any; // Importar Bootstrap desde el ámbito global
@@ -6,6 +6,7 @@ declare var bootstrap: any; // Importar Bootstrap desde el ámbito global
 
 /* Para que angular confie en los html */
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser'
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-principal',
@@ -14,12 +15,21 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser'
 })
 export class PrincipalComponent implements OnInit{
 
+  /* Modal compartir */
+  @ViewChild ('modalCompartir') modalCompartir: any;
+
   infoUsuario: any;
   proyectos: any = [];
   currentCollapseIndex: number | null = null;
   idProyecto: any;
   nombreP: any;
   descripcionProyecto: any;
+  proyecto:any = [];
+  compartirHTML: any;
+  compartirCSS: any;
+  compartirJS: any;
+  usuario: any = '';
+  usuarios:any = [];
 
   formularioCrearProyecto = new FormGroup({
     nombreProyecto: new FormControl('', [Validators.required]),
@@ -51,7 +61,8 @@ export class PrincipalComponent implements OnInit{
 
   /* Uso DomSanitizer para que no marque errores de seguridad, esto aparece en los videos de spotify */
   constructor(private usuariosServices:UsuariosService,
-              private sanitizer: DomSanitizer) {}
+              private sanitizer: DomSanitizer,
+              private modalService: NgbModal) {}
 
   /* Vemos el resultado de todo el codigo poniendo las etiquetas style para el css y script para js */
   get result(): SafeHtml {
@@ -70,6 +81,7 @@ export class PrincipalComponent implements OnInit{
 
     /* Consumo del endpoint para obtener los proyectos del usuario */
     this.obtenerProyectos()
+    this.obtenerUsuarios()
 
     /* Obtenemos el arreglo con los proyectos del service */
     this.usuariosServices.proyectos$.subscribe(proyectos => {
@@ -161,5 +173,45 @@ export class PrincipalComponent implements OnInit{
     const downloadUrl = 'ruta-al-archivo-zip'; // Reemplaza con la ruta correcta
   
     return downloadUrl;
+  }
+
+  compartirProyecto(proyecto: any) {
+    console.log('ver información del proyecto: ', proyecto);
+    this.proyecto = proyecto;
+
+    proyecto.archivos.forEach((item: { tipo: string; contenido: string; }) => {
+      if (item.tipo === 'html') {
+          this.compartirHTML = item.contenido;
+      } else if (item.tipo === 'css') {
+          this.compartirCSS = item.contenido;
+      } else if (item.tipo === 'javascript') {
+          this.compartirJS = item.contenido;
+      }
+  });
+    this.modalService.open(this.modalCompartir, {centered: true,size: 'md'});
+  }
+
+  mandarProyecto() {
+    const data = {
+      nombreProyecto: this.proyecto.nombreProyecto,
+      descripcion: this.proyecto.descripcion,
+      contenidoHTML: this.compartirHTML,
+      contenidoCSS: this.compartirCSS,
+      contenidoJS: this.compartirJS,
+    }
+
+    this.usuariosServices.crearProyectoUsuario(data, this.usuario).subscribe(res =>{
+      console.log(res);
+      this.obtenerProyectos()
+    },
+    error => console.log(error))
+  }
+
+  obtenerUsuarios() {
+    this.usuariosServices.obtenerUsuariosAdmin().subscribe(res =>{
+      console.log('usuarios: ',res);
+      this.usuarios = res;
+    },
+    error => console.log(error))
   }
 }

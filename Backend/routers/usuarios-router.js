@@ -132,6 +132,7 @@ router.post('/:idUsuario/proyectos', function (req, res){
   
 });
 
+
 /* Actualizar Proyecto a usuario (al darle en guardar un proyecto) */
 router.put("/:idUsuario/proyectos/:idProyecto", function (req, res) {
   usuario.updateOne({
