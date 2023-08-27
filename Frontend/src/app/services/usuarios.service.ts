@@ -73,7 +73,7 @@ export class UsuariosService {
         },
         {
             nombreArchivo: "JS",
-            tipo: "javascript",
+            tipo: "js",
             contenido: data.contenidoJS
         }
       ] 
@@ -98,7 +98,7 @@ export class UsuariosService {
         },
         {
             nombreArchivo: "JS",
-            tipo: "javascript",
+            tipo: "js",
             contenido: data.contenidoJS
         }
       ] 

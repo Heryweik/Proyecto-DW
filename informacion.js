@@ -32,7 +32,7 @@ db.usuarios.insertMany([
                 },
                 {
                   "nombreArchivo": "JS",
-                  "tipo": "javascript",
+                  "tipo": "js",
                   "contenido": "// Contenido JS..."
                 }
             ]

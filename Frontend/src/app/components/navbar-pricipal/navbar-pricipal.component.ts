@@ -127,7 +127,7 @@ export class NavbarPricipalComponent implements OnInit{
           this.compartirHTML = item.contenido;
       } else if (item.tipo === 'css') {
           this.compartirCSS = item.contenido;
-      } else if (item.tipo === 'javascript') {
+      } else if (item.tipo === 'js') {
           this.compartirJS = item.contenido;
       }
   });

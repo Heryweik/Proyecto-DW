@@ -3,6 +3,9 @@ import { UsuariosService } from 'src/app/services/usuarios.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 declare var bootstrap: any; // Importar Bootstrap desde el ámbito global
 
+/* Para descargar poryectos */
+import * as JSZip from 'jszip';
+
 
 /* Para que angular confie en los html */
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser'
@@ -171,17 +174,27 @@ export class PrincipalComponent implements OnInit{
           this.htmlCode = item.contenido;
       } else if (item.tipo === 'css') {
           this.cssCode = item.contenido;
-      } else if (item.tipo === 'javascript') {
+      } else if (item.tipo === 'js') {
           this.jsCode = item.contenido;
       }
   });
   }
 
-  generateDownloadLink(proyecto: any): string {
-    // Aquí construyes el enlace al archivo ZIP que contiene el proyecto
-    const downloadUrl = 'ruta-al-archivo-zip'; // Reemplaza con la ruta correcta
+  /* Para descargar proyectos en formato ZIP */
+  async generarArchivoZIP(archivos: any[], nombreProyecto: string) {
+    const zip = new JSZip();
   
-    return downloadUrl;
+    archivos.forEach(archivo => {
+      zip.file(`${archivo.nombreArchivo}.${archivo.tipo}`, archivo.contenido);
+    });
+  
+    const content = await zip.generateAsync({ type: 'blob' });
+    const blob = new Blob([content], { type: 'application/zip' });
+    
+    const link = document.createElement('a');
+    link.href = window.URL.createObjectURL(blob);
+    link.download = `${nombreProyecto}.zip`;
+    link.click();
   }
 
   compartirProyecto(proyecto: any) {
@@ -193,7 +206,7 @@ export class PrincipalComponent implements OnInit{
           this.compartirHTML = item.contenido;
       } else if (item.tipo === 'css') {
           this.compartirCSS = item.contenido;
-      } else if (item.tipo === 'javascript') {
+      } else if (item.tipo === 'js') {
           this.compartirJS = item.contenido;
       }
   });

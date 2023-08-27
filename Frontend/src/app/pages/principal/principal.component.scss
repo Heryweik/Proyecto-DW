@@ -248,7 +248,7 @@
             .collapse {
                 background-color: var(--color-fondo1)!important;
                 color: var(--letras-blancas);
-                width: 88%;
+                width: 80%;
 
                 .card {
                     background-color: var(--color-fondo1)!important;
@@ -270,6 +270,7 @@
 
                         .proyecto {
                             min-width: 100%;
+                            margin-bottom: .2rem;
                         }
                     }
                 }
@@ -307,6 +308,36 @@
         }
     }
 }
+
+.archivos {
+    min-height: 0;
+    transition: min-height 0.3s ease-in-out;
+  
+    &.show {
+      min-height: 100px; 
+      transition: min-height 0.3s ease-in-out;
+    }
+  
+    &:not(.show) {
+      display: none;
+    }
+  }
+  
+  .expanded {
+    .archivos {
+      min-height: 100px; 
+      transition: min-height 0.3s ease-in-out;
+    }
+  
+    .archivos.show {
+      min-height: 100px;
+      transition: min-height 0.3s ease-in-out;
+    }
+  
+    .archivos:not(.show) {
+      display: none;
+    }
+  }
 
 /* Disenio responsivo */
 /* Large devices (desktops, 992px and up) */
