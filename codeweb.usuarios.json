@@ -1,0 +1,673 @@
+[{
+  "_id": {
+    "$oid": "64e15e51bfe84ceb4608ea1a"
+  },
+  "nombre": "Hery",
+  "apellido": "Yass",
+  "correo": "hery@gmail.com",
+  "contrasenia": "1234",
+  "administrador": true
+},
+{
+  "_id": {
+    "$oid": "64ea9127910a5f56ebf67c99"
+  },
+  "nombre": "Admin",
+  "apellido": "Erick",
+  "correo": "admin@gmail.com",
+  "contrasenia": "admin123",
+  "plan": "VIP",
+  "administrador": true,
+  "proyectos": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64eaa15e27785662e9bb35a3"
+  },
+  "nombre": "Ayline",
+  "apellido": "Lopez",
+  "correo": "ayline@gmail.com",
+  "contrasenia": "ayline123",
+  "plan": "VIP",
+  "administrador": false,
+  "proyectos": [
+    {
+      "nombreProyecto": "Mi proyecto",
+      "descripcion": "Primer proyecto",
+      "archivos": [
+        {
+          "nombreArchivo": "HTML",
+          "tipo": "html",
+          "contenido": "<h1 class=\"saludo\">¡Hola Erick!</h1>",
+          "_id": {
+            "$oid": "64eaaa3c27785662e9bb3e10"
+          }
+        },
+        {
+          "nombreArchivo": "CSS",
+          "tipo": "css",
+          "contenido": ".saludo {\n      color: #2E3239;\n      cursor: pointer;\n    }",
+          "_id": {
+            "$oid": "64eaaa3c27785662e9bb3e11"
+          }
+        },
+        {
+          "nombreArchivo": "JS",
+          "tipo": "js",
+          "contenido": "document.addEventListener('DOMContentLoaded', \n    function() {\n        const saludoElement = document.querySelector('.saludo');\n        saludoElement.addEventListener('click', function() {\n            saludoElement.style.color = '#5f7ADB';\n        });\n    });",
+          "_id": {
+            "$oid": "64eaaa3c27785662e9bb3e12"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64eaaa3c27785662e9bb3e0f"
+      }
+    },
+    {
+      "nombreProyecto": "Proyecto X",
+      "descripcion": "asdasd",
+      "archivos": [
+        {
+          "nombreArchivo": "HTML",
+          "tipo": "html",
+          "contenido": "<h1 class=\"saludo\">¡Hola Erick!</h1>",
+          "_id": {
+            "$oid": "64eacd70b796144dadcdcc08"
+          }
+        },
+        {
+          "nombreArchivo": "CSS",
+          "tipo": "css",
+          "contenido": ".saludo {\n      color: #2E3239;\n      cursor: pointer;\n    }",
+          "_id": {
+            "$oid": "64eacd70b796144dadcdcc09"
+          }
+        },
+        {
+          "nombreArchivo": "JS",
+          "tipo": "js",
+          "contenido": "document.addEventListener('DOMContentLoaded', \n    function() {\n        const saludoElement = document.querySelector('.saludo');\n        saludoElement.addEventListener('click', function() {\n            saludoElement.style.color = '#5f7ADB';\n        });\n    });",
+          "_id": {
+            "$oid": "64eacd70b796144dadcdcc0a"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64eacd70b796144dadcdcc07"
+      }
+    },
+    {
+      "nombreProyecto": "DW",
+      "descripcion": "asdas",
+      "archivos": [
+        {
+          "nombreArchivo": "HTML",
+          "tipo": "html",
+          "contenido": "<h1 class=\"saludo\">¡Hola Erick!</h1>",
+          "_id": {
+            "$oid": "64ead44cb796144dadcdd2d8"
+          }
+        },
+        {
+          "nombreArchivo": "CSS",
+          "tipo": "css",
+          "contenido": ".saludo {\n      color: #2E3239;\n      cursor: pointer;\n    }",
+          "_id": {
+            "$oid": "64ead44cb796144dadcdd2d9"
+          }
+        },
+        {
+          "nombreArchivo": "JS",
+          "tipo": "js",
+          "contenido": "document.addEventListener('DOMContentLoaded', \n    function() {\n        const saludoElement = document.querySelector('.saludo');\n        saludoElement.addEventListener('click', function() {\n            saludoElement.style.color = '#5f7ADB';\n        });\n    });",
+          "_id": {
+            "$oid": "64ead44cb796144dadcdd2da"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64ead44cb796144dadcdd2d7"
+      }
+    },
+    {
+      "nombreProyecto": "Erick 1",
+      "descripcion": "asdasd",
+      "archivos": [
+        {
+          "nombreArchivo": "HTML",
+          "tipo": "html",
+          "contenido": "<h1 class=\"saludo\">¡Presentaciion final!!</h1>",
+          "_id": {
+            "$oid": "64ead416b796144dadcdd141"
+          }
+        },
+        {
+          "nombreArchivo": "CSS",
+          "tipo": "css",
+          "contenido": ".saludo {\n      color: #2E3239;\n      cursor: pointer;\n    }",
+          "_id": {
+            "$oid": "64ead416b796144dadcdd142"
+          }
+        },
+        {
+          "nombreArchivo": "JS",
+          "tipo": "js",
+          "contenido": "document.addEventListener('DOMContentLoaded', \n    function() {\n        const saludoElement = document.querySelector('.saludo');\n        saludoElement.addEventListener('click', function() {\n            saludoElement.style.color = '#5f7ADB';\n        });\n    });",
+          "_id": {
+            "$oid": "64ead416b796144dadcdd143"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64ead416b796144dadcdd140"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64eaa1b427785662e9bb3619"
+  },
+  "nombre": "Yhonny",
+  "apellido": "Aplicano",
+  "correo": "yhonny@gmail.com",
+  "contrasenia": "1234",
+  "plan": "Profesional",
+  "administrador": false,
+  "proyectos": [
+    {
+      "nombreProyecto": "Mi proyecto",
+      "descripcion": "Primer proyecto",
+      "archivos": [
+        {
+          "nombreArchivo": "HTML",
+          "tipo": "html",
+          "contenido": "<h1 class=\"saludo\">¡Hola Yhonny!</h1>",
+          "_id": {
+            "$oid": "64eaa23227785662e9bb368c"
+          }
+        },
+        {
+          "nombreArchivo": "CSS",
+          "tipo": "css",
+          "contenido": ".saludo {\n      color: #2E3239;\n      cursor: pointer;\n    }",
+          "_id": {
+            "$oid": "64eaa23227785662e9bb368d"
+          }
+        },
+        {
+          "nombreArchivo": "JS",
+          "tipo": "js",
+          "contenido": "document.addEventListener('DOMContentLoaded', \n    function() {\n        const saludoElement = document.querySelector('.saludo');\n        saludoElement.addEventListener('click', function() {\n            saludoElement.style.color = '#5f7ADB';\n        });\n    });",
+          "_id": {
+            "$oid": "64eaa23227785662e9bb368e"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64eaa23227785662e9bb368b"
+      }
+    },
+    {
+      "nombreProyecto": "Proyecto 1.x",
+      "descripcion": "asd",
+      "archivos": [
+        {
+          "nombreArchivo": "HTML",
+          "tipo": "html",
+          "contenido": "<h1 class=\"saludo\">¡Hola CodeWeb!</h1>",
+          "_id": {
+            "$oid": "64eac851b796144dadcdc5d7"
+          }
+        },
+        {
+          "nombreArchivo": "CSS",
+          "tipo": "css",
+          "contenido": ".saludo {\n      color: #2E3239;\n      cursor: pointer;\n    }",
+          "_id": {
+            "$oid": "64eac851b796144dadcdc5d8"
+          }
+        },
+        {
+          "nombreArchivo": "JS",
+          "tipo": "js",
+          "contenido": "document.addEventListener('DOMContentLoaded', \n    function() {\n        const saludoElement = document.querySelector('.saludo');\n        saludoElement.addEventListener('click', function() {\n            saludoElement.style.color = '#5f7ADB';\n        });\n    });",
+          "_id": {
+            "$oid": "64eac851b796144dadcdc5d9"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64eac851b796144dadcdc5d6"
+      }
+    },
+    {
+      "nombreProyecto": "Proyecto 2.x",
+      "descripcion": "asda",
+      "archivos": [
+        {
+          "nombreArchivo": "HTML",
+          "tipo": "html",
+          "contenido": "<h1 class=\"saludo\">¡Hola CodeWeb!</h1>",
+          "_id": {
+            "$oid": "64eac85bb796144dadcdc5ee"
+          }
+        },
+        {
+          "nombreArchivo": "CSS",
+          "tipo": "css",
+          "contenido": ".saludo {\n      color: #2E3239;\n      cursor: pointer;\n    }",
+          "_id": {
+            "$oid": "64eac85bb796144dadcdc5ef"
+          }
+        },
+        {
+          "nombreArchivo": "JS",
+          "tipo": "js",
+          "contenido": "document.addEventListener('DOMContentLoaded', \n    function() {\n        const saludoElement = document.querySelector('.saludo');\n        saludoElement.addEventListener('click', function() {\n            saludoElement.style.color = '#5f7ADB';\n        });\n    });",
+          "_id": {
+            "$oid": "64eac85bb796144dadcdc5f0"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64eac85bb796144dadcdc5ed"
+      }
+    },
+    {
+      "nombreProyecto": "Proyecto 3.x",
+      "descripcion": "asdasd",
+      "archivos": [
+        {
+          "nombreArchivo": "HTML",
+          "tipo": "html",
+          "contenido": "<h1 class=\"saludo\">¡Hola CodeWeb!</h1>",
+          "_id": {
+            "$oid": "64eac861b796144dadcdc60d"
+          }
+        },
+        {
+          "nombreArchivo": "CSS",
+          "tipo": "css",
+          "contenido": ".saludo {\n      color: #2E3239;\n      cursor: pointer;\n    }",
+          "_id": {
+            "$oid": "64eac861b796144dadcdc60e"
+          }
+        },
+        {
+          "nombreArchivo": "JS",
+          "tipo": "js",
+          "contenido": "document.addEventListener('DOMContentLoaded', \n    function() {\n        const saludoElement = document.querySelector('.saludo');\n        saludoElement.addEventListener('click', function() {\n            saludoElement.style.color = '#5f7ADB';\n        });\n    });",
+          "_id": {
+            "$oid": "64eac861b796144dadcdc60f"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64eac861b796144dadcdc60c"
+      }
+    },
+    {
+      "nombreProyecto": "Proyecto 4.x",
+      "descripcion": "asdasd",
+      "archivos": [
+        {
+          "nombreArchivo": "HTML",
+          "tipo": "html",
+          "contenido": "<h1 class=\"saludo\">¡Hola CodeWeb!</h1>",
+          "_id": {
+            "$oid": "64eac867b796144dadcdc634"
+          }
+        },
+        {
+          "nombreArchivo": "CSS",
+          "tipo": "css",
+          "contenido": ".saludo {\n      color: #2E3239;\n      cursor: pointer;\n    }",
+          "_id": {
+            "$oid": "64eac867b796144dadcdc635"
+          }
+        },
+        {
+          "nombreArchivo": "JS",
+          "tipo": "js",
+          "contenido": "document.addEventListener('DOMContentLoaded', \n    function() {\n        const saludoElement = document.querySelector('.saludo');\n        saludoElement.addEventListener('click', function() {\n            saludoElement.style.color = '#5f7ADB';\n        });\n    });",
+          "_id": {
+            "$oid": "64eac867b796144dadcdc636"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64eac867b796144dadcdc633"
+      }
+    },
+    {
+      "nombreProyecto": "Proyecto 5.x",
+      "descripcion": "asdasd",
+      "archivos": [
+        {
+          "nombreArchivo": "HTML",
+          "tipo": "html",
+          "contenido": "<h1 class=\"saludo\">¡Hola CodeWeb!</h1>",
+          "_id": {
+            "$oid": "64eac86db796144dadcdc663"
+          }
+        },
+        {
+          "nombreArchivo": "CSS",
+          "tipo": "css",
+          "contenido": ".saludo {\n      color: #2E3239;\n      cursor: pointer;\n    }",
+          "_id": {
+            "$oid": "64eac86db796144dadcdc664"
+          }
+        },
+        {
+          "nombreArchivo": "JS",
+          "tipo": "js",
+          "contenido": "document.addEventListener('DOMContentLoaded', \n    function() {\n        const saludoElement = document.querySelector('.saludo');\n        saludoElement.addEventListener('click', function() {\n            saludoElement.style.color = '#5f7ADB';\n        });\n    });",
+          "_id": {
+            "$oid": "64eac86db796144dadcdc665"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64eac86db796144dadcdc662"
+      }
+    },
+    {
+      "nombreProyecto": "Proyecto 6.x",
+      "descripcion": "asdasd",
+      "archivos": [
+        {
+          "nombreArchivo": "HTML",
+          "tipo": "html",
+          "contenido": "<h1 class=\"saludo\">¡Hola CodeWeb!</h1>",
+          "_id": {
+            "$oid": "64eac873b796144dadcdc69a"
+          }
+        },
+        {
+          "nombreArchivo": "CSS",
+          "tipo": "css",
+          "contenido": ".saludo {\n      color: #2E3239;\n      cursor: pointer;\n    }",
+          "_id": {
+            "$oid": "64eac873b796144dadcdc69b"
+          }
+        },
+        {
+          "nombreArchivo": "JS",
+          "tipo": "js",
+          "contenido": "document.addEventListener('DOMContentLoaded', \n    function() {\n        const saludoElement = document.querySelector('.saludo');\n        saludoElement.addEventListener('click', function() {\n            saludoElement.style.color = '#5f7ADB';\n        });\n    });",
+          "_id": {
+            "$oid": "64eac873b796144dadcdc69c"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64eac873b796144dadcdc699"
+      }
+    },
+    {
+      "nombreProyecto": "Proyecto 7.x",
+      "descripcion": "asdad",
+      "archivos": [
+        {
+          "nombreArchivo": "HTML",
+          "tipo": "html",
+          "contenido": "<h1 class=\"saludo\">¡Hola CodeWeb!</h1>",
+          "_id": {
+            "$oid": "64eac879b796144dadcdc6d9"
+          }
+        },
+        {
+          "nombreArchivo": "CSS",
+          "tipo": "css",
+          "contenido": ".saludo {\n      color: #2E3239;\n      cursor: pointer;\n    }",
+          "_id": {
+            "$oid": "64eac879b796144dadcdc6da"
+          }
+        },
+        {
+          "nombreArchivo": "JS",
+          "tipo": "js",
+          "contenido": "document.addEventListener('DOMContentLoaded', \n    function() {\n        const saludoElement = document.querySelector('.saludo');\n        saludoElement.addEventListener('click', function() {\n            saludoElement.style.color = '#5f7ADB';\n        });\n    });",
+          "_id": {
+            "$oid": "64eac879b796144dadcdc6db"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64eac879b796144dadcdc6d8"
+      }
+    },
+    {
+      "nombreProyecto": "Proyecto 8.x",
+      "descripcion": "asdas",
+      "archivos": [
+        {
+          "nombreArchivo": "HTML",
+          "tipo": "html",
+          "contenido": "<h1 class=\"saludo\">¡Hola CodeWeb!</h1>",
+          "_id": {
+            "$oid": "64eac88fb796144dadcdc720"
+          }
+        },
+        {
+          "nombreArchivo": "CSS",
+          "tipo": "css",
+          "contenido": ".saludo {\n      color: #2E3239;\n      cursor: pointer;\n    }",
+          "_id": {
+            "$oid": "64eac88fb796144dadcdc721"
+          }
+        },
+        {
+          "nombreArchivo": "JS",
+          "tipo": "js",
+          "contenido": "document.addEventListener('DOMContentLoaded', \n    function() {\n        const saludoElement = document.querySelector('.saludo');\n        saludoElement.addEventListener('click', function() {\n            saludoElement.style.color = '#5f7ADB';\n        });\n    });",
+          "_id": {
+            "$oid": "64eac88fb796144dadcdc722"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64eac88fb796144dadcdc71f"
+      }
+    },
+    {
+      "nombreProyecto": "Proyecto 9.x",
+      "descripcion": "asdasd",
+      "archivos": [
+        {
+          "nombreArchivo": "HTML",
+          "tipo": "html",
+          "contenido": "<h1 class=\"saludo\">¡Hola CodeWeb!</h1>",
+          "_id": {
+            "$oid": "64eac895b796144dadcdc76f"
+          }
+        },
+        {
+          "nombreArchivo": "CSS",
+          "tipo": "css",
+          "contenido": ".saludo {\n      color: #2E3239;\n      cursor: pointer;\n    }",
+          "_id": {
+            "$oid": "64eac895b796144dadcdc770"
+          }
+        },
+        {
+          "nombreArchivo": "JS",
+          "tipo": "js",
+          "contenido": "document.addEventListener('DOMContentLoaded', \n    function() {\n        const saludoElement = document.querySelector('.saludo');\n        saludoElement.addEventListener('click', function() {\n            saludoElement.style.color = '#5f7ADB';\n        });\n    });",
+          "_id": {
+            "$oid": "64eac895b796144dadcdc771"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64eac895b796144dadcdc76e"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64eacb8bb796144dadcdc9e6"
+  },
+  "nombre": "Rose",
+  "apellido": "Any",
+  "correo": "rose@gmail.com",
+  "contrasenia": "1234",
+  "plan": "Principiante",
+  "administrador": false,
+  "proyectos": [
+    {
+      "nombreProyecto": "Mi proyecto",
+      "descripcion": "Proyecto 1",
+      "archivos": [
+        {
+          "nombreArchivo": "HTML",
+          "tipo": "html",
+          "contenido": "<h1 class=\"saludo\">¡Hola CodeWeb!</h1>",
+          "_id": {
+            "$oid": "64eacc51b796144dadcdcac5"
+          }
+        },
+        {
+          "nombreArchivo": "CSS",
+          "tipo": "css",
+          "contenido": ".saludo {\n      color: #2E3239;\n      cursor: pointer;\n    }",
+          "_id": {
+            "$oid": "64eacc51b796144dadcdcac6"
+          }
+        },
+        {
+          "nombreArchivo": "JS",
+          "tipo": "js",
+          "contenido": "document.addEventListener('DOMContentLoaded', \n    function() {\n        const saludoElement = document.querySelector('.saludo');\n        saludoElement.addEventListener('click', function() {\n            saludoElement.style.color = '#5f7ADB';\n        });\n    });",
+          "_id": {
+            "$oid": "64eacc51b796144dadcdcac7"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64eacc51b796144dadcdcac4"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ead30cb796144dadcdcfef"
+  },
+  "nombre": "Erick",
+  "apellido": "Marin",
+  "correo": "erick@gmail.com",
+  "contrasenia": "erick123",
+  "plan": "Profesional",
+  "administrador": false,
+  "proyectos": [
+    {
+      "nombreProyecto": "Erick 1",
+      "descripcion": "asdasd",
+      "archivos": [
+        {
+          "nombreArchivo": "HTML",
+          "tipo": "html",
+          "contenido": "<h1 class=\"saludo\">¡Presentaciion final!!</h1>",
+          "_id": {
+            "$oid": "64ead3cfb796144dadcdd117"
+          }
+        },
+        {
+          "nombreArchivo": "CSS",
+          "tipo": "css",
+          "contenido": ".saludo {\n      color: #2E3239;\n      cursor: pointer;\n    }",
+          "_id": {
+            "$oid": "64ead3cfb796144dadcdd118"
+          }
+        },
+        {
+          "nombreArchivo": "JS",
+          "tipo": "js",
+          "contenido": "document.addEventListener('DOMContentLoaded', \n    function() {\n        const saludoElement = document.querySelector('.saludo');\n        saludoElement.addEventListener('click', function() {\n            saludoElement.style.color = '#5f7ADB';\n        });\n    });",
+          "_id": {
+            "$oid": "64ead3cfb796144dadcdd119"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64ead3cfb796144dadcdd116"
+      }
+    },
+    {
+      "nombreProyecto": "Erick 2",
+      "descripcion": "asda",
+      "archivos": [
+        {
+          "nombreArchivo": "HTML",
+          "tipo": "html",
+          "contenido": "<h1 class=\"saludo\">¡Hola CodeWeb!</h1>",
+          "_id": {
+            "$oid": "64ead3d8b796144dadcdd121"
+          }
+        },
+        {
+          "nombreArchivo": "CSS",
+          "tipo": "css",
+          "contenido": ".saludo {\n      color: #2E3239;\n      cursor: pointer;\n    }",
+          "_id": {
+            "$oid": "64ead3d8b796144dadcdd122"
+          }
+        },
+        {
+          "nombreArchivo": "JS",
+          "tipo": "js",
+          "contenido": "document.addEventListener('DOMContentLoaded', \n    function() {\n        const saludoElement = document.querySelector('.saludo');\n        saludoElement.addEventListener('click', function() {\n            saludoElement.style.color = '#5f7ADB';\n        });\n    });",
+          "_id": {
+            "$oid": "64ead3d8b796144dadcdd123"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64ead3d8b796144dadcdd120"
+      }
+    },
+    {
+      "nombreProyecto": "DW",
+      "descripcion": "asdas",
+      "archivos": [
+        {
+          "nombreArchivo": "HTML",
+          "tipo": "html",
+          "contenido": "<h1 class=\"saludo\">¡Hola Erick!</h1>",
+          "_id": {
+            "$oid": "64ead45db796144dadcdd2ff"
+          }
+        },
+        {
+          "nombreArchivo": "CSS",
+          "tipo": "css",
+          "contenido": ".saludo {\n      color: #2E3239;\n      cursor: pointer;\n    }",
+          "_id": {
+            "$oid": "64ead45db796144dadcdd300"
+          }
+        },
+        {
+          "nombreArchivo": "JS",
+          "tipo": "js",
+          "contenido": "document.addEventListener('DOMContentLoaded', \n    function() {\n        const saludoElement = document.querySelector('.saludo');\n        saludoElement.addEventListener('click', function() {\n            saludoElement.style.color = '#5f7ADB';\n        });\n    });",
+          "_id": {
+            "$oid": "64ead45db796144dadcdd301"
+          }
+        }
+      ],
+      "_id": {
+        "$oid": "64ead45db796144dadcdd2fe"
+      }
+    }
+  ],
+  "__v": 0
+}]

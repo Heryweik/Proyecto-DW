@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "2a3df6ec-ac96-4541-8330-29af62d45b88",
+		"name": "Proyecto DW",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26920899",
+		"_collection_link": "https://www.postman.com/spaceflight-pilot-59665954/workspace/proyecto-ing-de-software/collection/26920899-2a3df6ec-ac96-4541-8330-29af62d45b88?action=share&source=collection_link&creator=26920899"
+	},
+	"item": [
+		{
+			"name": "Obtener proyectos de usuario",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8888/usuarios/64e185e5c329034f48d42ab3/proyectos",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"usuarios",
+						"64e185e5c329034f48d42ab3",
+						"proyectos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear proyecto a usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombreProyecto\": \"Proyecto Postman 2\",\r\n  \"descripcion\": \"Este es un Proyecto creado desde Postman\",\r\n  \"archivos\": [\r\n    {\r\n      \"nombreArchivo\": \"HTML\",\r\n      \"tipo\": \"html\",\r\n      \"contenido\": \"<p>heyyyyy</p>\"\r\n    },\r\n    {\r\n      \"nombreArchivo\": \"CSS\",\r\n      \"tipo\": \"css\",\r\n      \"contenido\": \"/* Contenido CSS... */\"\r\n    },\r\n    {\r\n      \"nombreArchivo\": \"JS\",\r\n      \"tipo\": \"javascript\",\r\n      \"contenido\": \"// Contenido JS...\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/usuarios/64e15e51bfe84ceb4608ea1b/proyectos",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"usuarios",
+						"64e15e51bfe84ceb4608ea1b",
+						"proyectos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Compartir proyecto a usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombreProyecto\": \"Proyecto Postman 2\",\r\n  \"descripcion\": \"Este es un Proyecto creado desde Postman\",\r\n  \"archivos\": [\r\n    {\r\n      \"nombreArchivo\": \"HTML\",\r\n      \"tipo\": \"html\",\r\n      \"contenido\": \"<p>heyyyyy</p>\"\r\n    },\r\n    {\r\n      \"nombreArchivo\": \"CSS\",\r\n      \"tipo\": \"css\",\r\n      \"contenido\": \"/* Contenido CSS... */\"\r\n    },\r\n    {\r\n      \"nombreArchivo\": \"JS\",\r\n      \"tipo\": \"javascript\",\r\n      \"contenido\": \"// Contenido JS...\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/usuarios/64e15e51bfe84ceb4608ea1b/proyectos",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"usuarios",
+						"64e15e51bfe84ceb4608ea1b",
+						"proyectos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar proyecto de usuario",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombreProyecto\": \"Proyecto Postman X\",\r\n  \"descripcion\": \"Este es un Proyecto creado desde Postman\",\r\n  \"archivos\": [\r\n    {\r\n      \"nombreArchivo\": \"HTML\",\r\n      \"tipo\": \"html\",\r\n      \"contenido\": \"<p>nah</p>\"\r\n    },\r\n    {\r\n      \"nombreArchivo\": \"CSS\",\r\n      \"tipo\": \"css\",\r\n      \"contenido\": \"/* Contenido CSS... */\"\r\n    },\r\n    {\r\n      \"nombreArchivo\": \"JS\",\r\n      \"tipo\": \"javascript\",\r\n      \"contenido\": \"// Contenido JS...\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/usuarios/64e185e5c329034f48d42ab3/proyectos/64e18621c329034f48d42ac4",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"usuarios",
+						"64e185e5c329034f48d42ab3",
+						"proyectos",
+						"64e18621c329034f48d42ac4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar usuario",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombreProyecto\": \"Proyecto Postman X\",\r\n  \"descripcion\": \"Este es un Proyecto creado desde Postman\",\r\n  \"archivos\": [\r\n    {\r\n      \"nombreArchivo\": \"HTML\",\r\n      \"tipo\": \"html\",\r\n      \"contenido\": \"<p>nah</p>\"\r\n    },\r\n    {\r\n      \"nombreArchivo\": \"CSS\",\r\n      \"tipo\": \"css\",\r\n      \"contenido\": \"/* Contenido CSS... */\"\r\n    },\r\n    {\r\n      \"nombreArchivo\": \"JS\",\r\n      \"tipo\": \"javascript\",\r\n      \"contenido\": \"// Contenido JS...\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/usuarios/64e185e5c329034f48d42ab3/proyectos/64e18621c329034f48d42ac4",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"usuarios",
+						"64e185e5c329034f48d42ab3",
+						"proyectos",
+						"64e18621c329034f48d42ac4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar proyecto de usuario",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8888/usuarios/64e69d22257761fdd013ced8/proyectos/64e7cda8257761fdd013d386",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"usuarios",
+						"64e69d22257761fdd013ced8",
+						"proyectos",
+						"64e7cda8257761fdd013d386"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar usuario",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8888/usuarios/64e671d6635a6050f6a6f314",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"usuarios",
+						"64e671d6635a6050f6a6f314"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener usuarios",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "Ayline",
+							"type": "text"
+						},
+						{
+							"key": "apellido",
+							"value": "Lopez",
+							"type": "text"
+						},
+						{
+							"key": "fechaNacimiento",
+							"value": "01/04/2004",
+							"type": "text"
+						},
+						{
+							"key": "pais",
+							"value": "Honduras",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8888/usuarios",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un usuario",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "Ayline",
+							"type": "text"
+						},
+						{
+							"key": "apellido",
+							"value": "Lopez",
+							"type": "text"
+						},
+						{
+							"key": "fechaNacimiento",
+							"value": "01/04/2004",
+							"type": "text"
+						},
+						{
+							"key": "pais",
+							"value": "Honduras",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8888/usuarios/Yhonny",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"usuarios",
+						"Yhonny"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Admin\",\r\n    \"apellido\": \"Erick\",\r\n    \"correo\": \"admin@gmail.com\",\r\n    \"contrasenia\": \"admin123\",\r\n    \"plan\": \"VIP\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/usuarios",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"correo\": \"hery@gmail.com\",\r\n  \"contrasenia\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/usuarios/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"usuarios",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
