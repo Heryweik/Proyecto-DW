@@ -30,6 +30,7 @@ export class PrincipalComponent implements OnInit{
   compartirJS: any;
   usuario: any = '';
   usuarios:any = [];
+  mensajeLimite: any = '';
 
   formularioCrearProyecto = new FormGroup({
     nombreProyecto: new FormControl('', [Validators.required]),
@@ -72,11 +73,13 @@ export class PrincipalComponent implements OnInit{
   }
 
   ngOnInit(): void {
+
     /* Leemos la informacion de localStorage */
     const usuarioStorage = localStorage.getItem('usuario');
     if (usuarioStorage) {
       this.infoUsuario = JSON.parse(usuarioStorage);
       console.log('plan de usuario logueado: ', this.infoUsuario.plan);
+      
     }
 
     /* Consumo del endpoint para obtener los proyectos del usuario */
@@ -112,13 +115,19 @@ export class PrincipalComponent implements OnInit{
     /* Limita la cantidad de proyectos segun su plan */
     if (planUsuario === 'Principiante' && proyectosCreados >= 1) {
 
+      this.mensajeLimite = 'Has alcanzado el limite de proyectos!'
+
       console.log('No puedes crear más proyectos. Límite alcanzado para tu plan.');
 
     } else if (planUsuario === 'Profesional' && proyectosCreados >= 10) {
 
+      this.mensajeLimite = 'Has alcanzado el limite de proyectos!'
+
       console.log('No puedes crear más proyectos. Límite alcanzado para tu plan.');
 
     } else if (planUsuario === 'VIP' && proyectosCreados >= 100) {
+
+      this.mensajeLimite = 'Has alcanzado el limite de proyectos!'
       
       console.log('No puedes crear más proyectos. Límite alcanzado para tu plan.');
 

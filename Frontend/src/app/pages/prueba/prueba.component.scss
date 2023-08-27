@@ -8,17 +8,17 @@
 
 .containerFluid {
     margin: 0;
-    padding-top: 4.2rem;
+    padding-top: 4.1rem;
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     background-color: var(--color-fondo1)!important;
-    min-height: calc(100vh - 4.2rem);
+    min-height: calc(100vh - 4.1rem);
     color: var(--letras-blancas);
 
     aside {
-        height: calc(100vh - 4.2rem);
+        height: calc(100vh - 4.1rem);
         width: 3rem;
         background-color: var(--color-fondo2);
         display: flex;

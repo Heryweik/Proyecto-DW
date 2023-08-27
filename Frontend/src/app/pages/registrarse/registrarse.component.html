@@ -45,6 +45,11 @@
       </div>
       
       <span style="text-align: center; margin-bottom: .5rem;">Suscripcion elegida: {{suscripcion}}</span>
+
+      <div *ngIf="!formularioRegistro.valid" class="alert alert-info" role="alert" style="color: black; font-size: medium;">
+        Todos los campos son requeridos!
+      </div>
+
       <div class="boton" routerLink="/login">
         <button class="iSesion" type="button"
         (click)="registrarse()"

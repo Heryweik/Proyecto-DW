@@ -1,5 +1,6 @@
 db.usuarios.insertMany([
    {
+      /* Este es el administrado */
       "nombre":"Hery",
       "apellido":"Yass",
       "correo":"hery@gmail.com",

@@ -85,17 +85,17 @@
       Tipo de plan: {{infoUsuario.plan}}
 
       <br>
-      <ng-container *ngIf="infoUsuario.plan == 'Principiante'">
-        Limite de proyectos: 1
+      <ng-container *ngIf="infoUsuario.plan == 'Principiante'" >
+        <span style="border-bottom: 2px dashed #A2B2EE;">Limite de proyectos: 1</span>
       </ng-container>
-      <ng-container *ngIf="infoUsuario.plan == 'Profesional'">
-        Limite de proyectos: 10
+      <ng-container *ngIf="infoUsuario.plan == 'Profesional'" >
+        <span style="border-bottom: 2px dashed #A2B2EE;">Limite de proyectos: 10</span>
       </ng-container>
       <ng-container *ngIf="infoUsuario.plan == 'VIP'">
-        Limite de proyectos: 100
+        <span style="border-bottom: 2px dashed #A2B2EE;">Limite de proyectos: 100</span>
       </ng-container>
 
-      <button class="boton" routerLink="/planes">Actualizar plan</button>
+      <!-- <button class="boton" routerLink="/planes">Actualizar plan</button> -->
       Cantidad de proyectos: {{ proyectos.length }}
     </div>
     <div class="proyectos">

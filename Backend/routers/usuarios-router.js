@@ -59,6 +59,7 @@ router.post("/", function (req, res) {
 
 });
 
+
 /* Obtener un usuario */
 router.get("/:nombre", function (req, res) {
   usuario

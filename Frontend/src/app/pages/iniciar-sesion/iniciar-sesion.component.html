@@ -18,7 +18,7 @@
         <img src="../../../assets/img/logo.PNG" alt="" class="logo" />
       </div>
       <div class="saludo">
-      <h1>Iniciar sesion</h1>
+      <h1>Iniciar sesión</h1>
     </div>
       <div class="formInput">
         <input
@@ -38,16 +38,21 @@
           formControlName="contrasenia"
           (keyup.enter)="login()"
         />
-        <label class="form-label mb-0 userLabel">Contrasenia:</label>
+        <label class="form-label mb-0 userLabel">Contraseña:</label>
       </div>
+
+      <div *ngIf="validacion" class="alert alert-danger" role="alert" style="color: black; font-size: large; font-weight: 500; margin-top: -1rem;">
+        Credenciales incorrectas!
+      </div>
+
       <div class="boton">
         <button class="iSesion" type="button"
         (click)="login()"
-        [disabled]="!formularioLogin.valid">Iniciar sesion</button>
+        [disabled]="!formularioLogin.valid">Iniciar sesión</button>
       </div>
 
       <div class="facebook">
-      <p>O inicia sesion con</p>
+      <p>O inicia sesión con</p>
 
       <button class="simbolo">
         <i class="fa-brands fa-facebook logo"></i> Facebook
@@ -56,7 +61,7 @@
 
       <div class="footer">
         <p style="font-weight: lighter; margin-bottom: -3px">
-          Todavia no tienes una cuenta?
+          ¿Todavia no tienes una cuenta?
         </p>
         <p style="font-weight: bold; cursor: pointer;" routerLink="/signup">Crea un ahora</p>
       </div>

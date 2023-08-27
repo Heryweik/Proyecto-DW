@@ -59,6 +59,16 @@
       </div>
       <div
         class="celda"
+        style="
+          border-bottom: 1px solid white;
+          border-right: 1px solid white;
+          font-weight: 800;
+        "
+      >
+        Plan
+      </div>
+      <div
+        class="celda"
         style="border-bottom: 1px solid white; font-weight: 800"
       >
       Eliminar
@@ -73,6 +83,9 @@
       </div>
       <div class="celda" style="border-right: 1px solid white">
         {{usuario.proyectos.length}}
+      </div>
+      <div class="celda" style="border-right: 1px solid white">
+        {{usuario.plan}}
       </div>
       <div class="celda">
         <button class="delete" data-bs-toggle="modal" data-bs-target="#eliminar" (click)="usuarioEliminar(usuario._id)">
